@@ -1,0 +1,139 @@
+openapi: 3.1.0
+# x-speakeasy-test: true
+info:
+  title: Test Generation Demo
+  version: 0.1.0
+servers:
+  - url: http://localhost:35123
+    description: The default server.
+tags:
+  - name: users
+  - name: drinks
+security:
+  - apiKey: []
+paths:
+  /anything/user/{id}:
+    post:
+      operationId: createUser
+      x-speakeasy-name-override: create
+      # x-speakeasy-test: true
+      tags:
+        - users
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  json:
+                    $ref: "#/components/schemas/User"
+                required:
+                  - json
+  /anything/drink/{id}:
+    post:
+      operationId: createDrink
+      x-speakeasy-name-override: create
+      tags:
+        - drinks
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Drink"
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  json:
+                    $ref: "#/components/schemas/Drink"
+                required:
+                  - json
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+        name:
+          type: string
+          example: "John Doe"
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+              example: "123 Main St"
+            city:
+              type: string
+              example: "San Francisco"
+            state:
+              type: string
+              example: "CA"
+            zip:
+              type: string
+              example: "94107"
+        age:
+          type: integer
+          format: int32
+          example: 30
+        gender:
+          type: string
+          enum:
+            - MALE
+            - FEMALE
+            - OTHER
+          example: MALE
+      required:
+        - id
+        - name
+        - address
+        - age
+        - gender
+    Drink:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+          enum: [Beer, Coffee, Wine]
+        price:
+          type: number
+          format: double
+      required:
+        - id
+        - name
+        - price
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: X-API-Key
+      in: header

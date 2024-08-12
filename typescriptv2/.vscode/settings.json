@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "funcs": true,
+    "models": true,
+    "hooks": true,
+    "lib": true,
+    "node_modules": true,
+    "sdk": true,
+    "types": true,
+    "core*": true,
+    "index*": true
+  }
+}
