@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: b2b2c7b3-00e1-4647-934c-04d2d0f199fd
 management:
-  docChecksum: f7fb80f9d83799a1dc8478226d48fa0c
+  docChecksum: 9993e34f57c282fc8cd75457a57d9244
   docVersion: 0.1.0
-  speakeasyVersion: internal
-  generationVersion: internal
-  releaseVersion: 0.8.0
-  configChecksum: 1d1d8c74b9cdfb4de18329d312635989
+  speakeasyVersion: 1.361.1
+  generationVersion: 2.393.4
+  releaseVersion: 0.10.0
+  configChecksum: 97dc9506340ade690af57e446df7d465
 features:
   python:
     additionalDependencies: 1.0.0
@@ -70,7 +70,7 @@ generatedFiles:
   - docs/models/user.md
   - docs/models/createdrinkrequest.md
   - docs/models/createdrinkresponsebody.md
-  - docs/models/name.md
+  - docs/models/type.md
   - docs/models/drink.md
   - docs/models/security.md
   - docs/sdks/sdk/README.md

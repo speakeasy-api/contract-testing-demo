@@ -19,7 +19,7 @@ s = SDK(
 
 res = s.drinks.create(id="<value>", drink={
     "id": "<id>",
-    "name": "Coffee",
+    "type": "Coffee",
     "price": 4893.82,
 })
 

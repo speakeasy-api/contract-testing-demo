@@ -21,7 +21,7 @@ async function run() {
     id: "<id>",
     drink: {
       id: "<id>",
-      name: "Coffee",
+      type: "Coffee",
       price: 4893.82,
     },
   });

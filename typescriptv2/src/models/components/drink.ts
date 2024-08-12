@@ -5,54 +5,54 @@
 import { ClosedEnum } from "../../types/enums.js";
 import * as z from "zod";
 
-export const Name = {
+export const Type = {
     Beer: "Beer",
     Coffee: "Coffee",
     Wine: "Wine",
 } as const;
-export type Name = ClosedEnum<typeof Name>;
+export type Type = ClosedEnum<typeof Type>;
 
 export type Drink = {
     id: string;
-    name: Name;
+    type: Type;
     price: number;
 };
 
 /** @internal */
-export const Name$inboundSchema: z.ZodNativeEnum<typeof Name> = z.nativeEnum(Name);
+export const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(Type);
 
 /** @internal */
-export const Name$outboundSchema: z.ZodNativeEnum<typeof Name> = Name$inboundSchema;
+export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> = Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Name$ {
-    /** @deprecated use `Name$inboundSchema` instead. */
-    export const inboundSchema = Name$inboundSchema;
-    /** @deprecated use `Name$outboundSchema` instead. */
-    export const outboundSchema = Name$outboundSchema;
+export namespace Type$ {
+    /** @deprecated use `Type$inboundSchema` instead. */
+    export const inboundSchema = Type$inboundSchema;
+    /** @deprecated use `Type$outboundSchema` instead. */
+    export const outboundSchema = Type$outboundSchema;
 }
 
 /** @internal */
 export const Drink$inboundSchema: z.ZodType<Drink, z.ZodTypeDef, unknown> = z.object({
     id: z.string(),
-    name: Name$inboundSchema,
+    type: Type$inboundSchema,
     price: z.number(),
 });
 
 /** @internal */
 export type Drink$Outbound = {
     id: string;
-    name: string;
+    type: string;
     price: number;
 };
 
 /** @internal */
 export const Drink$outboundSchema: z.ZodType<Drink$Outbound, z.ZodTypeDef, Drink> = z.object({
     id: z.string(),
-    name: Name$outboundSchema,
+    type: Type$outboundSchema,
     price: z.number(),
 });
 

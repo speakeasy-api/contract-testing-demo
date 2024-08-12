@@ -1,4 +1,4 @@
-# Name
+# Type
 
 
 ## Values

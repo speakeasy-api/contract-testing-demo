@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4ff3941c-90a7-40f8-832b-cf515b18949e
 management:
-  docChecksum: f7fb80f9d83799a1dc8478226d48fa0c
+  docChecksum: 9993e34f57c282fc8cd75457a57d9244
   docVersion: 0.1.0
   speakeasyVersion: 1.361.1
   generationVersion: 2.393.4
-  releaseVersion: 0.1.0
-  configChecksum: 39f85b080e9fb1fd5fb9c28d8c69d0a2
+  releaseVersion: 0.1.1
+  configChecksum: db70e1e7423e87796beec1fc6e2780ba
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -75,7 +75,7 @@ generatedFiles:
   - docs/models/components/address.md
   - docs/models/components/gender.md
   - docs/models/components/user.md
-  - docs/models/components/name.md
+  - docs/models/components/type.md
   - docs/models/components/drink.md
   - docs/models/components/security.md
   - docs/sdks/sdk/README.md

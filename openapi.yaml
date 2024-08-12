@@ -1,5 +1,5 @@
 openapi: 3.1.0
-# x-speakeasy-test: true
+#x-speakeasy-test: true
 info:
   title: Test Generation Demo
   version: 0.1.0
@@ -56,11 +56,22 @@ paths:
           required: true
           schema:
             type: string
+          # examples:
+          #   createBeer:
+          #     value: "3a996362-8f81-4d2a-aced-d3d57474e6e9"
       requestBody:
         content:
           application/json:
             schema:
               $ref: "#/components/schemas/Drink"
+            # examples:
+            #   createBeer:
+            #     value:
+            #       {
+            #         "id": "3a996362-8f81-4d2a-aced-d3d57474e6e9",
+            #         "type": "Beer",
+            #         "price": 3.99,
+            #       }
         required: true
       responses:
         "200":
@@ -74,6 +85,17 @@ paths:
                     $ref: "#/components/schemas/Drink"
                 required:
                   - json
+              # examples:
+              #   createBeer:
+              #     value:
+              #       {
+              #         "json":
+              #           {
+              #             "id": "3a996362-8f81-4d2a-aced-d3d57474e6e9",
+              #             "type": "Beer",
+              #             "price": 3.99,
+              #           },
+              #       }
 components:
   schemas:
     User:
@@ -122,7 +144,7 @@ components:
       properties:
         id:
           type: string
-        name:
+        type:
           type: string
           enum: [Beer, Coffee, Wine]
         price:
@@ -130,7 +152,7 @@ components:
           format: double
       required:
         - id
-        - name
+        - type
         - price
   securitySchemes:
     apiKey:

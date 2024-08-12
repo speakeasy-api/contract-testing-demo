@@ -5,16 +5,16 @@ from openapi.types import BaseModel
 from typing import Literal, TypedDict
 
 
-Name = Literal["Beer", "Coffee", "Wine"]
+Type = Literal["Beer", "Coffee", "Wine"]
 
 class DrinkTypedDict(TypedDict):
     id: str
-    name: Name
+    type: Type
     price: float
     
 
 class Drink(BaseModel):
     id: str
-    name: Name
+    type: Type
     price: float
     
