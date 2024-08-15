@@ -1,0 +1,34 @@
+speakeasyVersion: 1.369.1
+sources:
+    openapi:
+        sourceNamespace: openapi
+        sourceRevisionDigest: sha256:45414ba942005f7162aebcc07cb723bbb35b5fb1573abdfe74f61648de6f7e67
+        sourceBlobDigest: sha256:b441cbd1d31793b4f06bba3af1102f95474fdc973c406197d78b3aa430b5f37d
+        tags:
+            - latest
+    testgendemo:
+        sourceNamespace: testgendemo
+        sourceRevisionDigest: sha256:822404104855175f3b9f2064fa3fa4faa8eb87511ffcfc33e5ce3b833e313685
+        sourceBlobDigest: sha256:e17bb2a1b12bae2ac069747808facbedc2faedb3d4decbd7ea40ef4992983b80
+        tags:
+            - latest
+targets:
+    python:
+        source: testgendemo
+        sourceNamespace: testgendemo
+        sourceRevisionDigest: sha256:822404104855175f3b9f2064fa3fa4faa8eb87511ffcfc33e5ce3b833e313685
+        sourceBlobDigest: sha256:e17bb2a1b12bae2ac069747808facbedc2faedb3d4decbd7ea40ef4992983b80
+        outLocation: .
+workflow:
+    workflowVersion: 1.0.0
+    sources:
+        testgendemo:
+            inputs:
+                - location: ../openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo
+    targets:
+        python:
+            target: python
+            source: testgendemo
+            output: .

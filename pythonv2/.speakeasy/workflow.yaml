@@ -1,0 +1,12 @@
+workflowVersion: 1.0.0
+sources:
+    testgendemo:
+        inputs:
+            - location: ../openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo
+targets:
+    python:
+        target: python
+        source: testgendemo
+        output: .
