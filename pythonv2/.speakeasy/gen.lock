@@ -3,14 +3,14 @@ id: b2b2c7b3-00e1-4647-934c-04d2d0f199fd
 management:
   docChecksum: 9993e34f57c282fc8cd75457a57d9244
   docVersion: 0.1.0
-  speakeasyVersion: 1.361.1
-  generationVersion: 2.393.4
-  releaseVersion: 0.10.0
-  configChecksum: 97dc9506340ade690af57e446df7d465
+  speakeasyVersion: 1.369.1
+  generationVersion: 2.399.0
+  releaseVersion: 0.16.0
+  configChecksum: b12134dadb27ccf686e7512a06b629cc
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.3.7
+    core: 5.3.8
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.1
     flattening: 3.0.0
