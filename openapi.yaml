@@ -47,6 +47,7 @@ paths:
   /anything/drink/{id}:
     post:
       operationId: createDrink
+      # x-speakeasy-test: true
       x-speakeasy-name-override: create
       tags:
         - drinks

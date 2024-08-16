@@ -34,6 +34,7 @@ tests:
   #   - name: John Doe
   #     # security:
   #     #   apiKey: "x-env: TEST_API_KEY"
+  #     # server: http://localhost:35123
   #     parameters:
   #       path:
   #         id: 90d8257b-5a84-4510-97c3-dabf1bfa361b
