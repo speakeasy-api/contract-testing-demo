@@ -3,31 +3,47 @@ id: b2b2c7b3-00e1-4647-934c-04d2d0f199fd
 management:
   docChecksum: 29eabae4d97d9560356b71c519df0b62
   docVersion: 0.1.0
-  speakeasyVersion: 1.369.1
-  generationVersion: 2.399.0
-  releaseVersion: 0.19.0
-  configChecksum: 35df8f9f341f5102c5d1d93a0dbcff4f
+  speakeasyVersion: 1.408.0
+  generationVersion: 2.429.0
+  releaseVersion: 0.20.0
+  configChecksum: bcaadbec8dde2de9286936625001966f
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.3.8
+    core: 5.5.8
     defaultEnabledRetries: 0.2.0
+    enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.1
-    flattening: 3.0.0
+    flattening: 3.1.0
     globalSecurity: 3.0.2
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.0.0
+    methodArguments: 1.0.2
     nameOverrides: 3.0.0
-    responseFormat: 1.0.0
-    retries: 3.0.0
+    responseFormat: 1.0.1
+    retries: 3.0.2
     sdkHooks: 1.0.0
 generatedFiles:
-  - src/openapi/sdkconfiguration.py
-  - src/openapi/users.py
-  - src/openapi/drinks.py
-  - src/openapi/sdk.py
+  - .gitattributes
+  - .python-version
   - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/address.md
+  - docs/models/createdrinkrequest.md
+  - docs/models/createdrinkresponsebody.md
+  - docs/models/createuserrequest.md
+  - docs/models/createuserresponsebody.md
+  - docs/models/drink.md
+  - docs/models/gender.md
+  - docs/models/security.md
+  - docs/models/type.md
+  - docs/models/user.md
+  - docs/models/utils/retryconfig.md
+  - docs/sdks/drinks/README.md
+  - docs/sdks/sdk/README.md
+  - docs/sdks/users/README.md
   - poetry.toml
   - py.typed
   - pylintrc
@@ -36,11 +52,25 @@ generatedFiles:
   - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/openapi/__init__.py
+  - src/openapi/_hooks/__init__.py
+  - src/openapi/_hooks/sdkhooks.py
+  - src/openapi/_hooks/types.py
   - src/openapi/basesdk.py
+  - src/openapi/drinks.py
   - src/openapi/httpclient.py
+  - src/openapi/models/__init__.py
+  - src/openapi/models/createdrinkop.py
+  - src/openapi/models/createuserop.py
+  - src/openapi/models/drink.py
+  - src/openapi/models/sdkerror.py
+  - src/openapi/models/security.py
+  - src/openapi/models/user.py
   - src/openapi/py.typed
+  - src/openapi/sdk.py
+  - src/openapi/sdkconfiguration.py
   - src/openapi/types/__init__.py
   - src/openapi/types/basemodel.py
+  - src/openapi/users.py
   - src/openapi/utils/__init__.py
   - src/openapi/utils/annotations.py
   - src/openapi/utils/enums.py
@@ -56,30 +86,24 @@ generatedFiles:
   - src/openapi/utils/serializers.py
   - src/openapi/utils/url.py
   - src/openapi/utils/values.py
-  - src/openapi/models/sdkerror.py
-  - src/openapi/models/createuserop.py
-  - src/openapi/models/user.py
-  - src/openapi/models/createdrinkop.py
-  - src/openapi/models/drink.py
-  - src/openapi/models/security.py
-  - src/openapi/models/__init__.py
-  - docs/models/createuserrequest.md
-  - docs/models/createuserresponsebody.md
-  - docs/models/address.md
-  - docs/models/gender.md
-  - docs/models/user.md
-  - docs/models/createdrinkrequest.md
-  - docs/models/createdrinkresponsebody.md
-  - docs/models/type.md
-  - docs/models/drink.md
-  - docs/models/security.md
-  - docs/sdks/sdk/README.md
-  - docs/models/utils/retryconfig.md
-  - docs/sdks/users/README.md
-  - docs/sdks/drinks/README.md
-  - USAGE.md
-  - .gitattributes
-  - src/openapi/_hooks/sdkhooks.py
-  - src/openapi/_hooks/types.py
-  - src/openapi/_hooks/__init__.py
-  - CONTRIBUTING.md
+examples:
+  createUser:
+    speakeasy-default-create-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      requestBody:
+        application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+      responses:
+        "200":
+          application/json: {"json": {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}}
+  createDrink:
+    speakeasy-default-create-drink:
+      parameters:
+        path:
+          id: "<id>"
+      requestBody:
+        application/json: {"id": "<id>", "type": "Coffee", "price": "6384.24"}
+      responses:
+        "200":
+          application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}

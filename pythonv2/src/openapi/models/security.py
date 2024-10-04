@@ -3,14 +3,22 @@
 from __future__ import annotations
 from openapi.types import BaseModel
 from openapi.utils import FieldMetadata, SecurityMetadata
-from typing import TypedDict
-from typing_extensions import Annotated
+from typing_extensions import Annotated, TypedDict
 
 
 class SecurityTypedDict(TypedDict):
     api_key: str
-    
+
 
 class Security(BaseModel):
-    api_key: Annotated[str, FieldMetadata(security=SecurityMetadata(scheme=True, scheme_type="apiKey", sub_type="header", field_name="X-API-Key"))]
-    
+    api_key: Annotated[
+        str,
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True,
+                scheme_type="apiKey",
+                sub_type="header",
+                field_name="X-API-Key",
+            )
+        ),
+    ]

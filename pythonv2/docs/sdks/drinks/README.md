@@ -1,6 +1,8 @@
 # Drinks
 (*drinks*)
 
+## Overview
+
 ### Available Operations
 
 * [create](#create)
@@ -16,11 +18,10 @@ s = SDK(
     api_key="<YOUR_API_KEY_HERE>",
 )
 
-
-res = s.drinks.create(id="<value>", drink={
+res = s.drinks.create(id="<id>", drink={
     "id": "<id>",
     "type": "Coffee",
-    "price": 4893.82,
+    "price": 6384.24,
 })
 
 if res is not None:
@@ -28,8 +29,6 @@ if res is not None:
     pass
 
 ```
-
-
 
 ### Parameters
 
@@ -39,12 +38,12 @@ if res is not None:
 | `drink`                                                             | [models.Drink](../../models/drink.md)                               | :heavy_check_mark:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.CreateDrinkResponseBody](../../models/createdrinkresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |

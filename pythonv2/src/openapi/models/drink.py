@@ -2,19 +2,22 @@
 
 from __future__ import annotations
 from openapi.types import BaseModel
-from typing import Literal, TypedDict
+from typing import Literal
+from typing_extensions import TypedDict
 
 
 Type = Literal["Beer", "Coffee", "Wine"]
+
 
 class DrinkTypedDict(TypedDict):
     id: str
     type: Type
     price: float
-    
+
 
 class Drink(BaseModel):
     id: str
+
     type: Type
+
     price: float
-    

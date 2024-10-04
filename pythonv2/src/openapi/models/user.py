@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 from openapi.types import BaseModel
-from typing import Literal, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Literal, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class AddressTypedDict(TypedDict):
@@ -11,16 +11,20 @@ class AddressTypedDict(TypedDict):
     city: NotRequired[str]
     state: NotRequired[str]
     zip: NotRequired[str]
-    
+
 
 class Address(BaseModel):
     street: Optional[str] = None
+
     city: Optional[str] = None
+
     state: Optional[str] = None
+
     zip: Optional[str] = None
-    
+
 
 Gender = Literal["MALE", "FEMALE", "OTHER"]
+
 
 class UserTypedDict(TypedDict):
     id: str
@@ -28,12 +32,15 @@ class UserTypedDict(TypedDict):
     address: AddressTypedDict
     age: int
     gender: Gender
-    
+
 
 class User(BaseModel):
     id: str
+
     name: str
+
     address: Address
+
     age: int
+
     gender: Gender
-    

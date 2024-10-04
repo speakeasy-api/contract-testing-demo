@@ -16,15 +16,44 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasy.com/docs/advanced-setup/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 
+<!-- Start Summary [summary] -->
+## Summary
+
+
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [IDE Support](#ide-support)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install git+<UNSET>.git
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add git+<UNSET>.git
 ```
@@ -42,7 +71,6 @@ from openapi import SDK
 s = SDK(
     api_key="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
     "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
@@ -97,13 +125,19 @@ asyncio.run(main())
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
-### [users](docs/sdks/users/README.md)
-
-* [create](docs/sdks/users/README.md#create)
+<details open>
+<summary>Available methods</summary>
 
 ### [drinks](docs/sdks/drinks/README.md)
 
 * [create](docs/sdks/drinks/README.md#create)
+
+
+### [users](docs/sdks/users/README.md)
+
+* [create](docs/sdks/users/README.md#create)
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Retries [retries] -->
@@ -119,7 +153,6 @@ from sdk.utils import BackoffStrategy, RetryConfig
 s = SDK(
     api_key="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
     "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
@@ -151,7 +184,6 @@ s = SDK(
     api_key="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
     "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
     "name": "John Doe",
@@ -175,11 +207,22 @@ if res is not None:
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
 
-| Error Object    | Status Code     | Content Type    |
+By default, an API error will raise a models.SDKError exception, which has the following properties:
+
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_async` method may raise the following exceptions:
+
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ### Example
 
@@ -193,26 +236,25 @@ s = SDK(
 res = None
 try:
     res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
-    "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
-    "name": "John Doe",
-    "address": {
-        "street": "123 Main St",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94107",
-    },
-    "age": 30,
-    "gender": "MALE",
-})
+        "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
+        "name": "John Doe",
+        "address": {
+            "street": "123 Main St",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip": "94107",
+        },
+        "age": 30,
+        "gender": "MALE",
+    })
+
+    if res is not None:
+        # handle response
+        pass
 
 except models.SDKError as e:
     # handle exception
     raise(e)
-
-if res is not None:
-    # handle response
-    pass
-
 ```
 <!-- End Error Handling [errors] -->
 
@@ -236,7 +278,6 @@ s = SDK(
     server_idx=0,
     api_key="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
     "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
@@ -268,7 +309,6 @@ s = SDK(
     server_url="http://localhost:35123",
     api_key="<YOUR_API_KEY_HERE>",
 )
-
 
 res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
     "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
@@ -390,7 +430,6 @@ s = SDK(
     api_key="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
     "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
     "name": "John Doe",
@@ -414,8 +453,9 @@ if res is not None:
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from openapi import SDK
 import logging

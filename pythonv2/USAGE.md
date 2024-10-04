@@ -7,7 +7,6 @@ s = SDK(
     api_key="<YOUR_API_KEY_HERE>",
 )
 
-
 res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
     "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
     "name": "John Doe",

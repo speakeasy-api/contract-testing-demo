@@ -1,4 +1,4 @@
-speakeasyVersion: 1.369.1
+speakeasyVersion: 1.408.0
 sources:
     openapi:
         sourceNamespace: openapi
@@ -8,19 +8,19 @@ sources:
             - latest
     testgendemo:
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:822404104855175f3b9f2064fa3fa4faa8eb87511ffcfc33e5ce3b833e313685
-        sourceBlobDigest: sha256:e17bb2a1b12bae2ac069747808facbedc2faedb3d4decbd7ea40ef4992983b80
+        sourceRevisionDigest: sha256:cf0185663cd28ef1501f028f71cef84dc35dd3b828c37f9a1d405858a349e2ab
+        sourceBlobDigest: sha256:089112f17f2feff306177e49d3c8519ddfa3587456f82a6cfa82609cf86c8ba4
         tags:
             - latest
 targets:
     python:
         source: testgendemo
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:822404104855175f3b9f2064fa3fa4faa8eb87511ffcfc33e5ce3b833e313685
-        sourceBlobDigest: sha256:e17bb2a1b12bae2ac069747808facbedc2faedb3d4decbd7ea40ef4992983b80
-        outLocation: .
+        sourceRevisionDigest: sha256:cf0185663cd28ef1501f028f71cef84dc35dd3b828c37f9a1d405858a349e2ab
+        sourceBlobDigest: sha256:089112f17f2feff306177e49d3c8519ddfa3587456f82a6cfa82609cf86c8ba4
 workflow:
     workflowVersion: 1.0.0
+    speakeasyVersion: latest
     sources:
         testgendemo:
             inputs:
