@@ -63,13 +63,13 @@ generation:
 
 * Open `openapi.yaml` to compare the API definition to the generated tests.
 * The `createUser` OAS operation response has OAS `example` properties for its data inside its referenced shared component (`components/schemas/User`). This data should be present in the language-specific test for that operation (e.g. `TestUsers_CreateUser` in Go).
-* The `createDrink` OAS operation does not have `example` properties for its data. This data should be automatically generated in the language-specific test for that operation (e.g. `TestUsers_CreateDrink` in Go).
+* The `createDrink` OAS operation does not have OAS `example` properties for its data inside its referenced shared component (`components/schemas/Drink`). This data should be automatically generated in the language-specific test for that operation (e.g. `TestUsers_CreateDrink` in Go). The OAS operation does, however, have OAS `examples` properties. Each named example under `examples` will create additional language-specific tests for that operation (e.g. `TestUsers_CreateDrinkCreateBeer` and `TestUsers_CreateDrinkCreateCoffee` in Go).
 
-### Running Tests
+### Run Tests
 
 * Open a CLI terminal to the root directory of the repository.
 * Run `speakeasy test` for the target language, e.g. `speakeasy test --target go`. Testing will automatically start the mock API server, call the language-specific testing commands, and stop the mock API server. Use `--verbose` flag to see actions/commands being ran.
-* Update the `.speakeasy/workflow.yaml` configuration to enable testing for `speakeasy run`:
+* Update the `.speakeasy/workflow.yaml` configuration to optionally enable testing for `speakeasy run`:
 
 ```yaml
 targets:
@@ -85,19 +85,8 @@ targets:
 
 * Review the generated `{LANGUAGE}/.speakeasy/tests.arazzo.yaml` configuration to show how language-specific testing is generated in a language-agnostic manner.
 
-### Generate Multiple OAS Based Tests for Single Operation
-
-* Reset the repository files to beginning (e.g. `git reset --hard HEAD`) and re-enable testing in the relevant language generation configuration.
-* Uncomment all commented `examples` properties in `openapi.yaml` under the `createDrink` OAS operation. These define two additional test cases for that operation.
-* Open a CLI terminal to the root directory of this repository.
-* Run `speakeasy run` for the target language.
-* Review the language-specific tests for the `createDrink` OAS operation (e.g. `TestUsers_CreateDrinkXXX` in Go). There should be two tests matching the OAS `examples`.
-
 ### Generate Custom Tests
 
-* Reset the repository files to beginning (e.g. `git reset --hard HEAD`) and re-enable testing in the relevant language generation configuration.
-* Open a CLI terminal to the root directory of this repository.
-* Run `speakeasy run` for the target language.
 * Update the `{LANGUAGE}/.speakeasy/tests.arazzo.yaml` configuration to include the following after all other configuration:
 
 ```yaml
@@ -198,7 +187,7 @@ targets:
 ```
 
 * Run `speakeasy run` for the target language.
-* Review the new language-specific test for the new user lifecycle test (e.g. `TestUsers_UserLifecycle` in Go). This test should be calling multiple SDK operations and passing response data to other requests.
+* Review the new language-specific test for this custom test that performs create, read, update, and delete operations (e.g. `TestUsers_UserLifecycle` in Go). This test should be calling multiple SDK operations and passing response data to other requests.
 
 ## Further Reading
 
