@@ -7,7 +7,7 @@
 </div>
 <br></br>
 
-This repository contains a demonstration for [Speakeasy Contract Testing](https://www.speakeasy.com/product/api-testing). It contains:
+This repository contains a demonstration for [Speakeasy Contract Testing](https://www.speakeasy.com/product/api-testing) feature set. It contains:
 
 * Sample OpenAPI Specification with the following API operations:
   * Create, read, update, and delete a user.
