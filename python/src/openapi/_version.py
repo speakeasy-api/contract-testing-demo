@@ -3,7 +3,7 @@
 import importlib.metadata
 
 __title__: str = "openapi"
-__version__: str = "0.21.0"
+__version__: str = "0.21.3"
 
 try:
     if __package__ is not None:

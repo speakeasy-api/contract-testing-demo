@@ -8,7 +8,7 @@ sources:
             - latest
     testgendemo:
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:90955c63ccb35aaf505cb91b9149bb1c36da47f0147053b774a0366df956221e
+        sourceRevisionDigest: sha256:191fd3c0bb47cb03e9fd835982ca1eb6e2419bd180147c9021affcbf22ec3600
         sourceBlobDigest: sha256:eec801eff634e3180b61f483b767824e05f9189cf2c2388e2f51bc27f89ed31e
         tags:
             - latest
@@ -17,24 +17,24 @@ targets:
     python:
         source: testgendemo
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:90955c63ccb35aaf505cb91b9149bb1c36da47f0147053b774a0366df956221e
+        sourceRevisionDigest: sha256:191fd3c0bb47cb03e9fd835982ca1eb6e2419bd180147c9021affcbf22ec3600
         sourceBlobDigest: sha256:eec801eff634e3180b61f483b767824e05f9189cf2c2388e2f51bc27f89ed31e
         codeSamplesNamespace: testgendemo-python-code-samples
-        codeSamplesRevisionDigest: sha256:c1aa2aba750fa45004273c12e7d721de83af4f9876ab8b5c566c892e9c30d475
+        codeSamplesRevisionDigest: sha256:94afea54eee51ef60299f5eea311dcb37dfc5f0d79846505c1f1bf9565f3a136
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         testgendemo:
             inputs:
-                - location: ../openapi.yaml
+                - location: ./openapi.yaml
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo
     targets:
         python:
             target: python
             source: testgendemo
-            output: .
+            output: ./python
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-python-code-samples
