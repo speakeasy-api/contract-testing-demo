@@ -8,12 +8,19 @@ sources:
             - latest
     testgendemo:
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:310750a34b642ad9a8af68b6f8c635ff34afc92b3cb5cd0feaeda460e987453d
+        sourceRevisionDigest: sha256:aad861993e0cba05579a6699d15b4a92e225405b9ac9089ea4fe5dd52633a600
         sourceBlobDigest: sha256:eec801eff634e3180b61f483b767824e05f9189cf2c2388e2f51bc27f89ed31e
         tags:
             - latest
             - 0.1.0
 targets:
+    go:
+        source: testgendemo
+        sourceNamespace: testgendemo
+        sourceRevisionDigest: sha256:aad861993e0cba05579a6699d15b4a92e225405b9ac9089ea4fe5dd52633a600
+        sourceBlobDigest: sha256:eec801eff634e3180b61f483b767824e05f9189cf2c2388e2f51bc27f89ed31e
+        codeSamplesNamespace: testgendemo-go-code-samples
+        codeSamplesRevisionDigest: sha256:898dcf786a363ae2d21958f5210bed108ba57dc35bd50fdb2802d58cb4f9a3df
     python:
         source: testgendemo
         sourceNamespace: testgendemo
@@ -38,6 +45,14 @@ workflow:
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo
     targets:
+        go:
+            target: go
+            source: testgendemo
+            output: ./go
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-go-code-samples
+                blocking: false
         python:
             target: python
             source: testgendemo

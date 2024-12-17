@@ -7,6 +7,14 @@ sources:
         registry:
             location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo
 targets:
+    go:
+        target: go
+        source: testgendemo
+        output: ./go
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-go-code-samples
+            blocking: false
     python:
         target: python
         source: testgendemo

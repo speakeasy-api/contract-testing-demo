@@ -1,0 +1,98 @@
+lockVersion: 2.0.0
+id: 029062a4-619d-4d39-b94e-cac35d6cf1e7
+management:
+  docChecksum: 29eabae4d97d9560356b71c519df0b62
+  docVersion: 0.1.0
+  speakeasyVersion: 1.455.7
+  generationVersion: 2.480.1
+  releaseVersion: 0.0.1
+  configChecksum: 98f2908c5a036ba839d7f36e257471bf
+features:
+  go:
+    additionalDependencies: 0.1.0
+    core: 3.6.2
+    defaultEnabledRetries: 0.2.0
+    envVarSecurityUsage: 0.3.2
+    flattening: 2.81.1
+    globalSecurity: 2.82.10
+    globalSecurityCallbacks: 0.1.0
+    globalSecurityFlattening: 0.1.0
+    globalServerURLs: 2.82.2
+    intellisenseMarkdownSupport: 0.1.0
+    nameOverrides: 2.81.2
+    responseFormat: 0.1.2
+    retries: 2.83.1
+    sdkHooks: 0.1.0
+generatedFiles:
+  - .gitattributes
+  - /models/components/drink.go
+  - /models/components/httpmetadata.go
+  - /models/components/security.go
+  - /models/components/user.go
+  - /models/operations/createdrink.go
+  - /models/operations/createuser.go
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/components/address.md
+  - docs/models/components/drink.md
+  - docs/models/components/gender.md
+  - docs/models/components/httpmetadata.md
+  - docs/models/components/security.md
+  - docs/models/components/type.md
+  - docs/models/components/user.md
+  - docs/models/operations/createdrinkrequest.md
+  - docs/models/operations/createdrinkresponse.md
+  - docs/models/operations/createdrinkresponsebody.md
+  - docs/models/operations/createuserrequest.md
+  - docs/models/operations/createuserresponse.md
+  - docs/models/operations/createuserresponsebody.md
+  - docs/models/operations/option.md
+  - docs/sdks/drinks/README.md
+  - docs/sdks/sdk/README.md
+  - docs/sdks/users/README.md
+  - drinks.go
+  - go.mod
+  - internal/hooks/hooks.go
+  - internal/utils/contenttype.go
+  - internal/utils/env.go
+  - internal/utils/form.go
+  - internal/utils/headers.go
+  - internal/utils/json.go
+  - internal/utils/pathparams.go
+  - internal/utils/queryparams.go
+  - internal/utils/requestbody.go
+  - internal/utils/retries.go
+  - internal/utils/security.go
+  - internal/utils/utils.go
+  - models/apierrors/apierror.go
+  - models/operations/options.go
+  - retry/config.go
+  - sdk.go
+  - types/bigint.go
+  - types/date.go
+  - types/datetime.go
+  - types/decimal.go
+  - types/pointers.go
+  - users.go
+examples:
+  createUser:
+    speakeasy-default-create-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      requestBody:
+        application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+      responses:
+        "200":
+          application/json: {"json": {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}}
+  createDrink:
+    speakeasy-default-create-drink:
+      parameters:
+        path:
+          id: "<id>"
+      requestBody:
+        application/json: {"id": "<id>", "type": "Coffee", "price": "6384.24"}
+      responses:
+        "200":
+          application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}
+generatedTests: {}
