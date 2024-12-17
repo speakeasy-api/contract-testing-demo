@@ -1,6 +1,13 @@
-# test-generation-demo
+<div align="center">
+    <picture>
+	<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/5dbef0ff-ee5f-4e8f-8abd-9f57e3310cb9">
+	<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/38058088-ac68-443e-9d63-94200c201759">
+	<img width="400px" src="https://github.com/user-attachments/assets/5dbef0ff-ee5f-4e8f-8abd-9f57e3310cb9#gh-light-mode-only" alt="Speakeasy">
+    </picture>
+</div>
+<br></br>
 
-This repository contains a demonstration for [Speakeasy Automated API Testing](https://www.speakeasy.com/product/api-testing). It contains:
+This repository contains a demonstration for [Speakeasy Contract Testing](https://www.speakeasy.com/product/api-testing). It contains:
 
 * Sample OpenAPI Specification with the following API operations:
   * Create, read, update, and delete a user.
@@ -192,6 +199,6 @@ targets:
 ## Further Reading
 
 * [Speakeasy blog post](https://www.speakeasy.com/post/contract-testing-with-openapi) on our thoughts on API testing.
-* [Speakeasy documentation](https://www.speakeasy.com/docs/testing) for testing features.
-* [OpenAPI introduction to Arazzo](https://www.openapis.org/arazzo).
-* [Speakeasy](https://www.speakeasy.com/openapi/arazzo) / [OpenAPI](https://spec.openapis.org/arazzo/latest.html) documentation for the Arazzo specification.
+* [Speakeasy documentation](https://www.speakeasy.com/docs/testing) for contract testing features.
+* [Official OpenAPI documentation on Arazzo](https://www.openapis.org/arazzo).
+* [Speakeasy documentation](https://www.speakeasy.com/openapi/arazzo) for the Arazzo specification.
