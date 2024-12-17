@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 029062a4-619d-4d39-b94e-cac35d6cf1e7
 management:
-  docChecksum: 29eabae4d97d9560356b71c519df0b62
+  docChecksum: def1f0d909c096c95373cc3d374cd5ac
   docVersion: 0.1.0
-  speakeasyVersion: 1.455.7
-  generationVersion: 2.480.1
-  releaseVersion: 0.0.1
-  configChecksum: 98f2908c5a036ba839d7f36e257471bf
+  speakeasyVersion: 1.456.0
+  generationVersion: 2.481.0
+  releaseVersion: 0.0.3
+  configChecksum: 7709620964c2f251c399e23c9ce85372
 features:
   go:
     additionalDependencies: 0.1.0
@@ -31,6 +31,9 @@ generatedFiles:
   - /models/components/user.go
   - /models/operations/createdrink.go
   - /models/operations/createuser.go
+  - /models/operations/deleteuser.go
+  - /models/operations/getuser.go
+  - /models/operations/updateuser.go
   - CONTRIBUTING.md
   - USAGE.md
   - docs/models/components/address.md
@@ -43,10 +46,15 @@ generatedFiles:
   - docs/models/operations/createdrinkrequest.md
   - docs/models/operations/createdrinkresponse.md
   - docs/models/operations/createdrinkresponsebody.md
-  - docs/models/operations/createuserrequest.md
   - docs/models/operations/createuserresponse.md
   - docs/models/operations/createuserresponsebody.md
+  - docs/models/operations/deleteuserrequest.md
+  - docs/models/operations/deleteuserresponse.md
+  - docs/models/operations/getuserrequest.md
+  - docs/models/operations/getuserresponse.md
   - docs/models/operations/option.md
+  - docs/models/operations/updateuserrequest.md
+  - docs/models/operations/updateuserresponse.md
   - docs/sdks/drinks/README.md
   - docs/sdks/sdk/README.md
   - docs/sdks/users/README.md
@@ -95,4 +103,27 @@ examples:
       responses:
         "200":
           application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}
+  getUser:
+    speakeasy-default-get-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      responses:
+        "200":
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+  updateUser:
+    speakeasy-default-update-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      requestBody:
+        application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+      responses:
+        "200":
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+  deleteUser:
+    speakeasy-default-delete-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
 generatedTests: {}

@@ -6,15 +6,13 @@ from .createdrinkop import (
     CreateDrinkResponseBody,
     CreateDrinkResponseBodyTypedDict,
 )
-from .createuserop import (
-    CreateUserRequest,
-    CreateUserRequestTypedDict,
-    CreateUserResponseBody,
-    CreateUserResponseBodyTypedDict,
-)
+from .createuserop import CreateUserResponseBody, CreateUserResponseBodyTypedDict
+from .deleteuserop import DeleteUserRequest, DeleteUserRequestTypedDict
 from .drink import Drink, DrinkTypedDict, Type
+from .getuserop import GetUserRequest, GetUserRequestTypedDict
 from .sdkerror import SDKError
 from .security import Security, SecurityTypedDict
+from .updateuserop import UpdateUserRequest, UpdateUserRequestTypedDict
 from .user import Address, AddressTypedDict, Gender, User, UserTypedDict
 
 __all__ = [
@@ -24,17 +22,21 @@ __all__ = [
     "CreateDrinkRequestTypedDict",
     "CreateDrinkResponseBody",
     "CreateDrinkResponseBodyTypedDict",
-    "CreateUserRequest",
-    "CreateUserRequestTypedDict",
     "CreateUserResponseBody",
     "CreateUserResponseBodyTypedDict",
+    "DeleteUserRequest",
+    "DeleteUserRequestTypedDict",
     "Drink",
     "DrinkTypedDict",
     "Gender",
+    "GetUserRequest",
+    "GetUserRequestTypedDict",
     "SDKError",
     "Security",
     "SecurityTypedDict",
     "Type",
+    "UpdateUserRequest",
+    "UpdateUserRequestTypedDict",
     "User",
     "UserTypedDict",
 ]

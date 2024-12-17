@@ -69,7 +69,7 @@ func main() {
 		openapi.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
-	res, err := s.Users.Create(ctx, "90d8257b-5a84-4510-97c3-dabf1bfa361b", components.User{
+	res, err := s.Users.Create(ctx, components.User{
 		ID:   "90d8257b-5a84-4510-97c3-dabf1bfa361b",
 		Name: "John Doe",
 		Address: components.Address{
@@ -121,7 +121,7 @@ func main() {
 		openapi.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
-	res, err := s.Users.Create(ctx, "90d8257b-5a84-4510-97c3-dabf1bfa361b", components.User{
+	res, err := s.Users.Create(ctx, components.User{
 		ID:   "90d8257b-5a84-4510-97c3-dabf1bfa361b",
 		Name: "John Doe",
 		Address: components.Address{
@@ -158,6 +158,9 @@ func main() {
 ### [Users](docs/sdks/users/README.md)
 
 * [Create](docs/sdks/users/README.md#create)
+* [Get](docs/sdks/users/README.md#get) - Get User
+* [Update](docs/sdks/users/README.md#update) - Update User
+* [Delete](docs/sdks/users/README.md#delete) - Delete User
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -187,7 +190,7 @@ func main() {
 		openapi.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
-	res, err := s.Users.Create(ctx, "90d8257b-5a84-4510-97c3-dabf1bfa361b", components.User{
+	res, err := s.Users.Create(ctx, components.User{
 		ID:   "90d8257b-5a84-4510-97c3-dabf1bfa361b",
 		Name: "John Doe",
 		Address: components.Address{
@@ -249,7 +252,7 @@ func main() {
 		openapi.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
-	res, err := s.Users.Create(ctx, "90d8257b-5a84-4510-97c3-dabf1bfa361b", components.User{
+	res, err := s.Users.Create(ctx, components.User{
 		ID:   "90d8257b-5a84-4510-97c3-dabf1bfa361b",
 		Name: "John Doe",
 		Address: components.Address{
@@ -306,7 +309,7 @@ func main() {
 		openapi.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
-	res, err := s.Users.Create(ctx, "90d8257b-5a84-4510-97c3-dabf1bfa361b", components.User{
+	res, err := s.Users.Create(ctx, components.User{
 		ID:   "90d8257b-5a84-4510-97c3-dabf1bfa361b",
 		Name: "John Doe",
 		Address: components.Address{
@@ -355,7 +358,7 @@ func main() {
 		openapi.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
-	res, err := s.Users.Create(ctx, "90d8257b-5a84-4510-97c3-dabf1bfa361b", components.User{
+	res, err := s.Users.Create(ctx, components.User{
 		ID:   "90d8257b-5a84-4510-97c3-dabf1bfa361b",
 		Name: "John Doe",
 		Address: components.Address{

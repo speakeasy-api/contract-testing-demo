@@ -3,16 +3,10 @@
  */
 
 import * as z from "zod";
-import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-
-export type CreateUserRequest = {
-  id: string;
-  user: components.User;
-};
 
 /**
  * Success
@@ -20,71 +14,6 @@ export type CreateUserRequest = {
 export type CreateUserResponseBody = {
   json: components.User;
 };
-
-/** @internal */
-export const CreateUserRequest$inboundSchema: z.ZodType<
-  CreateUserRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string(),
-  User: components.User$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "User": "user",
-  });
-});
-
-/** @internal */
-export type CreateUserRequest$Outbound = {
-  id: string;
-  User: components.User$Outbound;
-};
-
-/** @internal */
-export const CreateUserRequest$outboundSchema: z.ZodType<
-  CreateUserRequest$Outbound,
-  z.ZodTypeDef,
-  CreateUserRequest
-> = z.object({
-  id: z.string(),
-  user: components.User$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    user: "User",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateUserRequest$ {
-  /** @deprecated use `CreateUserRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateUserRequest$inboundSchema;
-  /** @deprecated use `CreateUserRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateUserRequest$outboundSchema;
-  /** @deprecated use `CreateUserRequest$Outbound` instead. */
-  export type Outbound = CreateUserRequest$Outbound;
-}
-
-export function createUserRequestToJSON(
-  createUserRequest: CreateUserRequest,
-): string {
-  return JSON.stringify(
-    CreateUserRequest$outboundSchema.parse(createUserRequest),
-  );
-}
-
-export function createUserRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateUserRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateUserRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateUserRequest' from JSON`,
-  );
-}
 
 /** @internal */
 export const CreateUserResponseBody$inboundSchema: z.ZodType<

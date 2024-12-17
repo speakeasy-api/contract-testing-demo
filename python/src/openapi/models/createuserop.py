@@ -3,24 +3,8 @@
 from __future__ import annotations
 from .user import User, UserTypedDict
 from openapi.types import BaseModel
-from openapi.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 import pydantic
 from typing_extensions import Annotated, TypedDict
-
-
-class CreateUserRequestTypedDict(TypedDict):
-    id: str
-    user: UserTypedDict
-
-
-class CreateUserRequest(BaseModel):
-    id: Annotated[
-        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
-    ]
-
-    user: Annotated[
-        User, FieldMetadata(request=RequestMetadata(media_type="application/json"))
-    ]
 
 
 class CreateUserResponseBodyTypedDict(TypedDict):

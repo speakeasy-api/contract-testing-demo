@@ -3,16 +3,62 @@
  */
 
 import { usersCreate } from "../funcs/usersCreate.js";
+import { usersDelete } from "../funcs/usersDelete.js";
+import { usersGet } from "../funcs/usersGet.js";
+import { usersUpdate } from "../funcs/usersUpdate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Users extends ClientSDK {
   async create(
-    request: operations.CreateUserRequest,
+    request: components.User,
     options?: RequestOptions,
   ): Promise<operations.CreateUserResponseBody> {
     return unwrapAsync(usersCreate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get User
+   */
+  async get(
+    request: operations.GetUserRequest,
+    options?: RequestOptions,
+  ): Promise<components.User> {
+    return unwrapAsync(usersGet(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update User
+   */
+  async update(
+    request: operations.UpdateUserRequest,
+    options?: RequestOptions,
+  ): Promise<components.User> {
+    return unwrapAsync(usersUpdate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Delete User
+   */
+  async delete(
+    request: operations.DeleteUserRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(usersDelete(
       this,
       request,
       options,

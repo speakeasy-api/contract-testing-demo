@@ -3,7 +3,7 @@
  */
 
 import { SDKCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
+import { encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
@@ -22,13 +22,16 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function usersCreate(
+/**
+ * Get User
+ */
+export async function usersGet(
   client: SDKCore,
-  request: components.User,
+  request: operations.GetUserRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.CreateUserResponseBody,
+    components.User,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -40,19 +43,25 @@ export async function usersCreate(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.User$outboundSchema.parse(value),
+    (value) => operations.GetUserRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return parsed;
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
+  const body = null;
 
-  const path = pathToFunc("/anything/user")();
+  const pathParams = {
+    id: encodeSimple("id", payload.id, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
+
+  const path = pathToFunc("/anything/user/{id}")(pathParams);
 
   const headers = new Headers({
-    "Content-Type": "application/json",
     Accept: "application/json",
   });
 
@@ -61,7 +70,7 @@ export async function usersCreate(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "createUser",
+    operationID: "getUser",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -75,7 +84,7 @@ export async function usersCreate(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "POST",
+    method: "GET",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
@@ -99,7 +108,7 @@ export async function usersCreate(
   const response = doResult.value;
 
   const [result] = await M.match<
-    operations.CreateUserResponseBody,
+    components.User,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -108,7 +117,7 @@ export async function usersCreate(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.CreateUserResponseBody$inboundSchema),
+    M.json(200, components.User$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

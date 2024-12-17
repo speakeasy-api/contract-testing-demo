@@ -11,20 +11,13 @@ tags:
 security:
   - apiKey: []
 paths:
-  /anything/user/{id}:
+  /anything/user:
     post:
       operationId: createUser
       x-speakeasy-name-override: create
       # x-speakeasy-test: false
       tags:
         - users
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            example: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
       requestBody:
         content:
           application/json:
@@ -43,6 +36,55 @@ paths:
                     $ref: "#/components/schemas/User"
                 required:
                   - json
+  /anything/user/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          example: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+    get:
+      operationId: getUser
+      x-speakeasy-name-override: get
+      summary: Get User
+      tags:
+        - users
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+    put:
+      operationId: updateUser
+      x-speakeasy-name-override: update
+      summary: Update User
+      tags:
+        - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      operationId: deleteUser
+      x-speakeasy-name-override: delete
+      summary: Delete User
+      tags:
+        - users
+      responses:
+        "200":
+          description: OK
   /anything/drink/{id}:
     post:
       operationId: createDrink

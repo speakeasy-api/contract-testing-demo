@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: b2b2c7b3-00e1-4647-934c-04d2d0f199fd
 management:
-  docChecksum: 29eabae4d97d9560356b71c519df0b62
+  docChecksum: def1f0d909c096c95373cc3d374cd5ac
   docVersion: 0.1.0
-  speakeasyVersion: 1.455.7
-  generationVersion: 2.480.1
-  releaseVersion: 0.21.3
-  configChecksum: 211292cd87b5c4ad45aa7ec917373607
+  speakeasyVersion: 1.456.0
+  generationVersion: 2.481.0
+  releaseVersion: 0.22.1
+  configChecksum: 94c9c3baa078a4c20b606ff5d28366a2
 features:
   python:
     additionalDependencies: 1.0.0
@@ -33,12 +33,14 @@ generatedFiles:
   - docs/models/address.md
   - docs/models/createdrinkrequest.md
   - docs/models/createdrinkresponsebody.md
-  - docs/models/createuserrequest.md
   - docs/models/createuserresponsebody.md
+  - docs/models/deleteuserrequest.md
   - docs/models/drink.md
   - docs/models/gender.md
+  - docs/models/getuserrequest.md
   - docs/models/security.md
   - docs/models/type.md
+  - docs/models/updateuserrequest.md
   - docs/models/user.md
   - docs/models/utils/retryconfig.md
   - docs/sdks/drinks/README.md
@@ -61,9 +63,12 @@ generatedFiles:
   - src/openapi/models/__init__.py
   - src/openapi/models/createdrinkop.py
   - src/openapi/models/createuserop.py
+  - src/openapi/models/deleteuserop.py
   - src/openapi/models/drink.py
+  - src/openapi/models/getuserop.py
   - src/openapi/models/sdkerror.py
   - src/openapi/models/security.py
+  - src/openapi/models/updateuserop.py
   - src/openapi/models/user.py
   - src/openapi/py.typed
   - src/openapi/sdk.py
@@ -107,4 +112,27 @@ examples:
       responses:
         "200":
           application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}
+  getUser:
+    speakeasy-default-get-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      responses:
+        "200":
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+  updateUser:
+    speakeasy-default-update-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      requestBody:
+        application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+      responses:
+        "200":
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+  deleteUser:
+    speakeasy-default-delete-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
 generatedTests: {}

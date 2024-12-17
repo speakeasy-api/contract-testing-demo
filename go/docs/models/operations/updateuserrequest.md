@@ -1,4 +1,4 @@
-# CreateUserRequest
+# UpdateUserRequest
 
 
 ## Fields

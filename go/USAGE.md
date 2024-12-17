@@ -16,7 +16,7 @@ func main() {
 		openapi.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
-	res, err := s.Users.Create(ctx, "90d8257b-5a84-4510-97c3-dabf1bfa361b", components.User{
+	res, err := s.Users.Create(ctx, components.User{
 		ID:   "90d8257b-5a84-4510-97c3-dabf1bfa361b",
 		Name: "John Doe",
 		Address: components.Address{

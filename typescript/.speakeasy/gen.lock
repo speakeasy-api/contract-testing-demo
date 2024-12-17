@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4ff3941c-90a7-40f8-832b-cf515b18949e
 management:
-  docChecksum: 29eabae4d97d9560356b71c519df0b62
+  docChecksum: def1f0d909c096c95373cc3d374cd5ac
   docVersion: 0.1.0
-  speakeasyVersion: 1.455.7
-  generationVersion: 2.480.1
-  releaseVersion: 0.2.0
-  configChecksum: 230f731dcda2f3f5075b2271dc6d32c8
+  speakeasyVersion: 1.456.0
+  generationVersion: 2.481.0
+  releaseVersion: 0.2.2
+  configChecksum: 88bc37f9f444c82ace2e2af7d12e2f69
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -39,8 +39,10 @@ generatedFiles:
   - docs/models/components/user.md
   - docs/models/operations/createdrinkrequest.md
   - docs/models/operations/createdrinkresponsebody.md
-  - docs/models/operations/createuserrequest.md
   - docs/models/operations/createuserresponsebody.md
+  - docs/models/operations/deleteuserrequest.md
+  - docs/models/operations/getuserrequest.md
+  - docs/models/operations/updateuserrequest.md
   - docs/sdks/drinks/README.md
   - docs/sdks/sdk/README.md
   - docs/sdks/users/README.md
@@ -49,6 +51,9 @@ generatedFiles:
   - src/core.ts
   - src/funcs/drinksCreate.ts
   - src/funcs/usersCreate.ts
+  - src/funcs/usersDelete.ts
+  - src/funcs/usersGet.ts
+  - src/funcs/usersUpdate.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -78,7 +83,10 @@ generatedFiles:
   - src/models/errors/sdkvalidationerror.ts
   - src/models/operations/createdrink.ts
   - src/models/operations/createuser.ts
+  - src/models/operations/deleteuser.ts
+  - src/models/operations/getuser.ts
   - src/models/operations/index.ts
+  - src/models/operations/updateuser.ts
   - src/sdk/drinks.ts
   - src/sdk/index.ts
   - src/sdk/sdk.ts
@@ -113,4 +121,27 @@ examples:
       responses:
         "200":
           application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}
+  getUser:
+    speakeasy-default-get-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      responses:
+        "200":
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+  updateUser:
+    speakeasy-default-update-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
+      requestBody:
+        application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+      responses:
+        "200":
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
+  deleteUser:
+    speakeasy-default-delete-user:
+      parameters:
+        path:
+          id: "90d8257b-5a84-4510-97c3-dabf1bfa361b"
 generatedTests: {}

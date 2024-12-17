@@ -1,11 +1,11 @@
-# CreateUserRequest
+# UpdateUserRequest
 
 ## Example Usage
 
 ```typescript
-import { CreateUserRequest } from "openapi/models/operations";
+import { UpdateUserRequest } from "openapi/models/operations";
 
-let value: CreateUserRequest = {
+let value: UpdateUserRequest = {
   id: "90d8257b-5a84-4510-97c3-dabf1bfa361b",
   user: {
     id: "90d8257b-5a84-4510-97c3-dabf1bfa361b",

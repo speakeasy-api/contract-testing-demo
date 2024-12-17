@@ -6,25 +6,6 @@ import (
 	"openapi/models/components"
 )
 
-type CreateUserRequest struct {
-	ID   string          `pathParam:"style=simple,explode=false,name=id"`
-	User components.User `request:"mediaType=application/json"`
-}
-
-func (o *CreateUserRequest) GetID() string {
-	if o == nil {
-		return ""
-	}
-	return o.ID
-}
-
-func (o *CreateUserRequest) GetUser() components.User {
-	if o == nil {
-		return components.User{}
-	}
-	return o.User
-}
-
 // CreateUserResponseBody - Success
 type CreateUserResponseBody struct {
 	JSON components.User `json:"json"`

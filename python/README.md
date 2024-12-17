@@ -78,7 +78,7 @@ with SDK(
     api_key="<YOUR_API_KEY_HERE>",
 ) as sdk:
 
-    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+    res = sdk.users.create(request={
         "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
         "name": "John Doe",
         "address": {
@@ -110,7 +110,7 @@ async def main():
         api_key="<YOUR_API_KEY_HERE>",
     ) as sdk:
 
-        res = await sdk.users.create_async(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+        res = await sdk.users.create_async(request={
             "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
             "name": "John Doe",
             "address": {
@@ -146,6 +146,9 @@ asyncio.run(main())
 ### [users](docs/sdks/users/README.md)
 
 * [create](docs/sdks/users/README.md#create)
+* [get](docs/sdks/users/README.md#get) - Get User
+* [update](docs/sdks/users/README.md#update) - Update User
+* [delete](docs/sdks/users/README.md#delete) - Delete User
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -164,7 +167,7 @@ with SDK(
     api_key="<YOUR_API_KEY_HERE>",
 ) as sdk:
 
-    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+    res = sdk.users.create(request={
         "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
         "name": "John Doe",
         "address": {
@@ -195,7 +198,7 @@ with SDK(
     api_key="<YOUR_API_KEY_HERE>",
 ) as sdk:
 
-    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+    res = sdk.users.create(request={
         "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
         "name": "John Doe",
         "address": {
@@ -247,7 +250,7 @@ with SDK(
     res = None
     try:
 
-        res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+        res = sdk.users.create(request={
             "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
             "name": "John Doe",
             "address": {
@@ -285,7 +288,7 @@ with SDK(
     api_key="<YOUR_API_KEY_HERE>",
 ) as sdk:
 
-    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+    res = sdk.users.create(request={
         "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
         "name": "John Doe",
         "address": {
@@ -406,7 +409,7 @@ with SDK(
     api_key="<YOUR_API_KEY_HERE>",
 ) as sdk:
 
-    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+    res = sdk.users.create(request={
         "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
         "name": "John Doe",
         "address": {
