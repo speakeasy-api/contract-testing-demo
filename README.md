@@ -35,8 +35,8 @@ The goals of this demonstration are to show:
 
 The following are prerequisites for running the demonstration locally:
 
-* Must have [Speakeasy CLI](https://www.speakeasy.com/docs/create-client-sdks) installed and authenticated.
-  * Must be authenticated with Speakeasy enterprise tier account (e.g. `speakeasy-self`).
+* Must have [Speakeasy CLI](https://www.speakeasy.com/docs/speakeasy-cli/getting-started) installed and authenticated.
+  * Must be authenticated with an enterprise tier workspace on the [Speakeasy platform](https://app.speakeasy.com/)
 * Must have relevant language(s) installed to successfully generate SDK and run testing:
   * [Go](https://go.dev/)
   * [Python](https://www.python.org/)
