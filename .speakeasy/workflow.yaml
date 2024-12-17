@@ -15,3 +15,11 @@ targets:
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-python-code-samples
             blocking: false
+    typescript:
+        target: typescript
+        source: testgendemo
+        output: ./typescript
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-typescript-code-samples
+            blocking: false

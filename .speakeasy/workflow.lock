@@ -8,7 +8,7 @@ sources:
             - latest
     testgendemo:
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:191fd3c0bb47cb03e9fd835982ca1eb6e2419bd180147c9021affcbf22ec3600
+        sourceRevisionDigest: sha256:310750a34b642ad9a8af68b6f8c635ff34afc92b3cb5cd0feaeda460e987453d
         sourceBlobDigest: sha256:eec801eff634e3180b61f483b767824e05f9189cf2c2388e2f51bc27f89ed31e
         tags:
             - latest
@@ -21,6 +21,13 @@ targets:
         sourceBlobDigest: sha256:eec801eff634e3180b61f483b767824e05f9189cf2c2388e2f51bc27f89ed31e
         codeSamplesNamespace: testgendemo-python-code-samples
         codeSamplesRevisionDigest: sha256:94afea54eee51ef60299f5eea311dcb37dfc5f0d79846505c1f1bf9565f3a136
+    typescript:
+        source: testgendemo
+        sourceNamespace: testgendemo
+        sourceRevisionDigest: sha256:310750a34b642ad9a8af68b6f8c635ff34afc92b3cb5cd0feaeda460e987453d
+        sourceBlobDigest: sha256:eec801eff634e3180b61f483b767824e05f9189cf2c2388e2f51bc27f89ed31e
+        codeSamplesNamespace: testgendemo-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:8a8a5f35f23da02637b2186a3f76307447ee1b0a8e23c2eaa3c0b5cc02fcc167
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -38,4 +45,12 @@ workflow:
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-python-code-samples
+                blocking: false
+        typescript:
+            target: typescript
+            source: testgendemo
+            output: ./typescript
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-typescript-code-samples
                 blocking: false
