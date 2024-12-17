@@ -12,6 +12,10 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: false
+  # mockServer:
+  #   disabled: false
+  # tests:
+  #   generateNewTests: true
 typescript:
   version: 0.2.0
   additionalDependencies:

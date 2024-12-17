@@ -1,5 +1,4 @@
 openapi: 3.1.0
-#x-speakeasy-test: true
 info:
   title: Test Generation Demo
   version: 0.1.0
@@ -16,7 +15,7 @@ paths:
     post:
       operationId: createUser
       x-speakeasy-name-override: create
-      # x-speakeasy-test: true
+      # x-speakeasy-test: false
       tags:
         - users
       parameters:
@@ -47,7 +46,7 @@ paths:
   /anything/drink/{id}:
     post:
       operationId: createDrink
-      # x-speakeasy-test: true
+      # x-speakeasy-test: false
       x-speakeasy-name-override: create
       tags:
         - drinks
@@ -60,6 +59,8 @@ paths:
           # examples:
           #   createBeer:
           #     value: "3a996362-8f81-4d2a-aced-d3d57474e6e9"
+          #   createCoffee:
+          #     value: "7afd487f-5fa2-478f-9726-ff80ec8e75f1"
       requestBody:
         content:
           application/json:
@@ -72,6 +73,13 @@ paths:
             #         "id": "3a996362-8f81-4d2a-aced-d3d57474e6e9",
             #         "type": "Beer",
             #         "price": 3.99,
+            #       }
+            #   createCoffee:
+            #     value:
+            #       {
+            #         "id": "7afd487f-5fa2-478f-9726-ff80ec8e75f1",
+            #         "type": "Coffee",
+            #         "price": 1.99,
             #       }
         required: true
       responses:
@@ -95,6 +103,16 @@ paths:
               #             "id": "3a996362-8f81-4d2a-aced-d3d57474e6e9",
               #             "type": "Beer",
               #             "price": 3.99,
+              #           },
+              #       }
+              #   createCoffee:
+              #     value:
+              #       {
+              #         "json":
+              #           {
+              #             "id": "7afd487f-5fa2-478f-9726-ff80ec8e75f1",
+              #             "type": "Coffee",
+              #             "price": 1.99,
               #           },
               #       }
 components:

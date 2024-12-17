@@ -12,6 +12,10 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
+  # mockServer:
+  #   disabled: false
+  # tests:
+  #   generateNewTests: true
 go:
   version: 0.0.1
   additionalDependencies: {}

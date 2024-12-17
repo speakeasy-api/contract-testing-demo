@@ -15,6 +15,8 @@ targets:
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-go-code-samples
             blocking: false
+        # testing:
+        #     enabled: true
     python:
         target: python
         source: testgendemo
@@ -23,6 +25,8 @@ targets:
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-python-code-samples
             blocking: false
+        # testing:
+        #     enabled: true
     typescript:
         target: typescript
         source: testgendemo
@@ -31,3 +35,5 @@ targets:
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-typescript-code-samples
             blocking: false
+        # testing:
+        #     enabled: true
