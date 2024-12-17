@@ -50,7 +50,7 @@ with SDK(
 
 ### Response
 
-**[models.CreateUserResponseBody](../../models/createuserresponsebody.md)**
+**[models.User](../../models/user.md)**
 
 ### Errors
 

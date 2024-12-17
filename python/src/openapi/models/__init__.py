@@ -6,7 +6,6 @@ from .createdrinkop import (
     CreateDrinkResponseBody,
     CreateDrinkResponseBodyTypedDict,
 )
-from .createuserop import CreateUserResponseBody, CreateUserResponseBodyTypedDict
 from .deleteuserop import DeleteUserRequest, DeleteUserRequestTypedDict
 from .drink import Drink, DrinkTypedDict, Type
 from .getuserop import GetUserRequest, GetUserRequestTypedDict
@@ -22,8 +21,6 @@ __all__ = [
     "CreateDrinkRequestTypedDict",
     "CreateDrinkResponseBody",
     "CreateDrinkResponseBodyTypedDict",
-    "CreateUserResponseBody",
-    "CreateUserResponseBodyTypedDict",
     "DeleteUserRequest",
     "DeleteUserRequestTypedDict",
     "Drink",

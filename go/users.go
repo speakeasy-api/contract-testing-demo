@@ -194,12 +194,12 @@ func (s *Users) Create(ctx context.Context, request components.User, opts ...ope
 				return nil, err
 			}
 
-			var out operations.CreateUserResponseBody
+			var out components.User
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.Object = &out
+			res.User = &out
 		default:
 			rawBody, err := utils.ConsumeRawBody(httpRes)
 			if err != nil {

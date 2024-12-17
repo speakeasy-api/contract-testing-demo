@@ -11,7 +11,7 @@ let value: CreateDrinkResponseBody = {
   json: {
     id: "<id>",
     type: "Coffee",
-    price: 5448.83,
+    price: 4375.87,
   },
 };
 ```

@@ -15,7 +15,7 @@ export class Users extends ClientSDK {
   async create(
     request: components.User,
     options?: RequestOptions,
-  ): Promise<operations.CreateUserResponseBody> {
+  ): Promise<components.User> {
     return unwrapAsync(usersCreate(
       this,
       request,

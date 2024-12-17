@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 029062a4-619d-4d39-b94e-cac35d6cf1e7
 management:
-  docChecksum: def1f0d909c096c95373cc3d374cd5ac
+  docChecksum: 8275ae344b4c393fd4fffe46826d8f74
   docVersion: 0.1.0
   speakeasyVersion: 1.456.0
   generationVersion: 2.481.0
-  releaseVersion: 0.0.3
-  configChecksum: 7709620964c2f251c399e23c9ce85372
+  releaseVersion: 0.0.4
+  configChecksum: e1d66913d3fda8536e7e0c449d88a27a
 features:
   go:
     additionalDependencies: 0.1.0
@@ -47,7 +47,6 @@ generatedFiles:
   - docs/models/operations/createdrinkresponse.md
   - docs/models/operations/createdrinkresponsebody.md
   - docs/models/operations/createuserresponse.md
-  - docs/models/operations/createuserresponsebody.md
   - docs/models/operations/deleteuserrequest.md
   - docs/models/operations/deleteuserresponse.md
   - docs/models/operations/getuserrequest.md
@@ -92,7 +91,7 @@ examples:
         application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
       responses:
         "200":
-          application/json: {"json": {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}}
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
   createDrink:
     speakeasy-default-create-drink:
       parameters:

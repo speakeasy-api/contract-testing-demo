@@ -6,22 +6,10 @@ import (
 	"openapi/models/components"
 )
 
-// CreateUserResponseBody - Success
-type CreateUserResponseBody struct {
-	JSON components.User `json:"json"`
-}
-
-func (o *CreateUserResponseBody) GetJSON() components.User {
-	if o == nil {
-		return components.User{}
-	}
-	return o.JSON
-}
-
 type CreateUserResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
 	// Success
-	Object *CreateUserResponseBody
+	User *components.User
 }
 
 func (o *CreateUserResponse) GetHTTPMeta() components.HTTPMetadata {
@@ -31,9 +19,9 @@ func (o *CreateUserResponse) GetHTTPMeta() components.HTTPMetadata {
 	return o.HTTPMeta
 }
 
-func (o *CreateUserResponse) GetObject() *CreateUserResponseBody {
+func (o *CreateUserResponse) GetUser() *components.User {
 	if o == nil {
 		return nil
 	}
-	return o.Object
+	return o.User
 }

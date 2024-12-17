@@ -30,12 +30,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  json:
-                    $ref: "#/components/schemas/User"
-                required:
-                  - json
+                $ref: "#/components/schemas/User"
   /anything/user/{id}:
     parameters:
       - name: id

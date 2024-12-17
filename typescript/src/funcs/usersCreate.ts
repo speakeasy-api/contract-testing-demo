@@ -19,7 +19,6 @@ import {
 } from "../models/errors/httpclienterrors.js";
 import { SDKError } from "../models/errors/sdkerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
-import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 export async function usersCreate(
@@ -28,7 +27,7 @@ export async function usersCreate(
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.CreateUserResponseBody,
+    components.User,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -99,7 +98,7 @@ export async function usersCreate(
   const response = doResult.value;
 
   const [result] = await M.match<
-    operations.CreateUserResponseBody,
+    components.User,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -108,7 +107,7 @@ export async function usersCreate(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.CreateUserResponseBody$inboundSchema),
+    M.json(200, components.User$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

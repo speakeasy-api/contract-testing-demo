@@ -16,7 +16,7 @@ class Users(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.CreateUserResponseBody]:
+    ) -> Optional[models.User]:
         r"""
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -75,9 +75,7 @@ class Users(BaseSDK):
         )
 
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, Optional[models.CreateUserResponseBody]
-            )
+            return utils.unmarshal_json(http_res.text, Optional[models.User])
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.SDKError(
@@ -101,7 +99,7 @@ class Users(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.CreateUserResponseBody]:
+    ) -> Optional[models.User]:
         r"""
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -160,9 +158,7 @@ class Users(BaseSDK):
         )
 
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, Optional[models.CreateUserResponseBody]
-            )
+            return utils.unmarshal_json(http_res.text, Optional[models.User])
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.SDKError(

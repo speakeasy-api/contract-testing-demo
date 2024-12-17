@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 4ff3941c-90a7-40f8-832b-cf515b18949e
 management:
-  docChecksum: def1f0d909c096c95373cc3d374cd5ac
+  docChecksum: 8275ae344b4c393fd4fffe46826d8f74
   docVersion: 0.1.0
   speakeasyVersion: 1.456.0
   generationVersion: 2.481.0
-  releaseVersion: 0.2.2
-  configChecksum: 88bc37f9f444c82ace2e2af7d12e2f69
+  releaseVersion: 0.2.3
+  configChecksum: 5af71f2f7be6472c025dce11220b33a3
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -39,7 +39,6 @@ generatedFiles:
   - docs/models/components/user.md
   - docs/models/operations/createdrinkrequest.md
   - docs/models/operations/createdrinkresponsebody.md
-  - docs/models/operations/createuserresponsebody.md
   - docs/models/operations/deleteuserrequest.md
   - docs/models/operations/getuserrequest.md
   - docs/models/operations/updateuserrequest.md
@@ -82,7 +81,6 @@ generatedFiles:
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/models/operations/createdrink.ts
-  - src/models/operations/createuser.ts
   - src/models/operations/deleteuser.ts
   - src/models/operations/getuser.ts
   - src/models/operations/index.ts
@@ -110,7 +108,7 @@ examples:
         application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
       responses:
         "200":
-          application/json: {"json": {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}}
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
   createDrink:
     speakeasy-default-create-drink:
       parameters:

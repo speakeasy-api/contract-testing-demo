@@ -7,8 +7,8 @@ import { Drink } from "openapi/models/components";
 
 let value: Drink = {
   id: "<id>",
-  type: "Coffee",
-  price: 4375.87,
+  type: "Wine",
+  price: 6027.63,
 };
 ```
 

@@ -10,7 +10,7 @@ let value: CreateDrinkRequest = {
   drink: {
     id: "<id>",
     type: "Coffee",
-    price: 7151.89,
+    price: 4236.55,
   },
 };
 ```

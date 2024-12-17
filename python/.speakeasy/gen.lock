@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: b2b2c7b3-00e1-4647-934c-04d2d0f199fd
 management:
-  docChecksum: def1f0d909c096c95373cc3d374cd5ac
+  docChecksum: 8275ae344b4c393fd4fffe46826d8f74
   docVersion: 0.1.0
   speakeasyVersion: 1.456.0
   generationVersion: 2.481.0
-  releaseVersion: 0.22.1
-  configChecksum: 94c9c3baa078a4c20b606ff5d28366a2
+  releaseVersion: 0.22.2
+  configChecksum: 9215ff98aa1b2d7e2d05a6bf29d93a02
 features:
   python:
     additionalDependencies: 1.0.0
@@ -33,7 +33,6 @@ generatedFiles:
   - docs/models/address.md
   - docs/models/createdrinkrequest.md
   - docs/models/createdrinkresponsebody.md
-  - docs/models/createuserresponsebody.md
   - docs/models/deleteuserrequest.md
   - docs/models/drink.md
   - docs/models/gender.md
@@ -62,7 +61,6 @@ generatedFiles:
   - src/openapi/httpclient.py
   - src/openapi/models/__init__.py
   - src/openapi/models/createdrinkop.py
-  - src/openapi/models/createuserop.py
   - src/openapi/models/deleteuserop.py
   - src/openapi/models/drink.py
   - src/openapi/models/getuserop.py
@@ -101,7 +99,7 @@ examples:
         application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
       responses:
         "200":
-          application/json: {"json": {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}}
+          application/json: {"id": "90d8257b-5a84-4510-97c3-dabf1bfa361b", "name": "John Doe", "address": {"street": "123 Main St", "city": "San Francisco", "state": "CA", "zip": "94107"}, "age": 30, "gender": "MALE"}
   createDrink:
     speakeasy-default-create-drink:
       parameters:

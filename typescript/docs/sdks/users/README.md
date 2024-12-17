@@ -94,7 +94,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.CreateUserResponseBody](../../models/operations/createuserresponsebody.md)\>**
+**Promise\<[components.User](../../models/components/user.md)\>**
 
 ### Errors
 

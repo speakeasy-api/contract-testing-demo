@@ -3,7 +3,6 @@
  */
 
 export * from "./createdrink.js";
-export * from "./createuser.js";
 export * from "./deleteuser.js";
 export * from "./getuser.js";
 export * from "./updateuser.js";
