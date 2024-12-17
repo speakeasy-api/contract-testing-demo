@@ -17,7 +17,7 @@ This repository contains a demonstration for [Speakeasy Contract Testing](https:
   * Python ([pytest](https://docs.pytest.org/))
   * TypeScript ([vitest](https://vitest.dev/))
 
-Refer to the [testing documentation](https://speakeasy.com/docs/testing) for latest details about enabling and configuring the product.
+Refer to the [Speakeasy documentation](https://speakeasy.com/docs/testing) for latest details about enabling and configuring the product.
 
 ## Demonstration
 
