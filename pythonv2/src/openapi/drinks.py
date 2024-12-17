@@ -4,7 +4,7 @@ from .basesdk import BaseSDK
 from openapi import models, utils
 from openapi._hooks import HookContext
 from openapi.types import OptionalNullable, UNSET
-from typing import Optional, Union
+from typing import Mapping, Optional, Union
 
 
 class Drinks(BaseSDK):
@@ -16,6 +16,7 @@ class Drinks(BaseSDK):
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
     ) -> Optional[models.CreateDrinkResponseBody]:
         r"""
         :param id:
@@ -23,6 +24,7 @@ class Drinks(BaseSDK):
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
         """
         base_url = None
         url_variables = None
@@ -48,6 +50,7 @@ class Drinks(BaseSDK):
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
+            http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.drink, False, False, "json", models.Drink
@@ -79,15 +82,17 @@ class Drinks(BaseSDK):
                 http_res.text, Optional[models.CreateDrinkResponseBody]
             )
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
+            http_res_text = utils.stream_to_text(http_res)
             raise models.SDKError(
-                "API error occurred", http_res.status_code, http_res.text, http_res
+                "API error occurred", http_res.status_code, http_res_text, http_res
             )
 
         content_type = http_res.headers.get("Content-Type")
+        http_res_text = utils.stream_to_text(http_res)
         raise models.SDKError(
             f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
             http_res.status_code,
-            http_res.text,
+            http_res_text,
             http_res,
         )
 
@@ -99,6 +104,7 @@ class Drinks(BaseSDK):
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
     ) -> Optional[models.CreateDrinkResponseBody]:
         r"""
         :param id:
@@ -106,6 +112,7 @@ class Drinks(BaseSDK):
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
         """
         base_url = None
         url_variables = None
@@ -131,6 +138,7 @@ class Drinks(BaseSDK):
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="application/json",
+            http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.drink, False, False, "json", models.Drink
@@ -162,14 +170,16 @@ class Drinks(BaseSDK):
                 http_res.text, Optional[models.CreateDrinkResponseBody]
             )
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
             raise models.SDKError(
-                "API error occurred", http_res.status_code, http_res.text, http_res
+                "API error occurred", http_res.status_code, http_res_text, http_res
             )
 
         content_type = http_res.headers.get("Content-Type")
+        http_res_text = await utils.stream_to_text_async(http_res)
         raise models.SDKError(
             f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
             http_res.status_code,
-            http_res.text,
+            http_res_text,
             http_res,
         )

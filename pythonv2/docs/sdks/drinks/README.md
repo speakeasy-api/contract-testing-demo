@@ -14,19 +14,20 @@
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     api_key="<YOUR_API_KEY_HERE>",
-)
+) as sdk:
 
-res = s.drinks.create(id="<id>", drink={
-    "id": "<id>",
-    "type": "Coffee",
-    "price": 6384.24,
-})
+    res = sdk.drinks.create(id="<id>", drink={
+        "id": "<id>",
+        "type": "Coffee",
+        "price": 6384.24,
+    })
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 

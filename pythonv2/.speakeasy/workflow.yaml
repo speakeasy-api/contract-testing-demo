@@ -11,3 +11,7 @@ targets:
         target: python
         source: testgendemo
         output: .
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/testgendemo-python-code-samples
+            blocking: false

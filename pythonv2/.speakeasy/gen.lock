@@ -3,22 +3,22 @@ id: b2b2c7b3-00e1-4647-934c-04d2d0f199fd
 management:
   docChecksum: 29eabae4d97d9560356b71c519df0b62
   docVersion: 0.1.0
-  speakeasyVersion: 1.408.0
-  generationVersion: 2.429.0
-  releaseVersion: 0.20.0
-  configChecksum: bcaadbec8dde2de9286936625001966f
+  speakeasyVersion: 1.455.7
+  generationVersion: 2.480.1
+  releaseVersion: 0.21.0
+  configChecksum: 57b2b44a6594e71fd9f52db6ea8d24d2
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.5.8
+    core: 5.7.4
     defaultEnabledRetries: 0.2.0
     enumUnions: 0.1.0
-    envVarSecurityUsage: 0.3.1
+    envVarSecurityUsage: 0.3.2
     flattening: 3.1.0
     globalSecurity: 3.0.2
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
-    globalServerURLs: 3.0.0
+    globalServerURLs: 3.1.0
     methodArguments: 1.0.2
     nameOverrides: 3.0.0
     responseFormat: 1.0.1
@@ -48,13 +48,13 @@ generatedFiles:
   - py.typed
   - pylintrc
   - pyproject.toml
-  - scripts/compile.sh
   - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/openapi/__init__.py
   - src/openapi/_hooks/__init__.py
   - src/openapi/_hooks/sdkhooks.py
   - src/openapi/_hooks/types.py
+  - src/openapi/_version.py
   - src/openapi/basesdk.py
   - src/openapi/drinks.py
   - src/openapi/httpclient.py
@@ -107,3 +107,4 @@ examples:
       responses:
         "200":
           application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}
+generatedTests: {}

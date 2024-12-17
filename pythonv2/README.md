@@ -24,17 +24,23 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
+<!-- $toc-max-depth=2 -->
+* [openapi](#openapi)
+  * [🏗 **Welcome to your new SDK!** 🏗](#welcome-to-your-new-sdk)
+  * [SDK Installation](#sdk-installation)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Retries](#retries)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Authentication](#authentication)
+  * [Debugging](#debugging)
+  * [IDE Support](#ide-support)
+* [Development](#development)
+  * [Maturity](#maturity)
+  * [Contributions](#contributions)
 
-* [SDK Installation](#sdk-installation)
-* [IDE Support](#ide-support)
-* [SDK Example Usage](#sdk-example-usage)
-* [Available Resources and Operations](#available-resources-and-operations)
-* [Retries](#retries)
-* [Error Handling](#error-handling)
-* [Server Selection](#server-selection)
-* [Custom HTTP Client](#custom-http-client)
-* [Authentication](#authentication)
-* [Debugging](#debugging)
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
@@ -68,41 +74,11 @@ poetry add git+<UNSET>.git
 # Synchronous Example
 from openapi import SDK
 
-s = SDK(
+with SDK(
     api_key="<YOUR_API_KEY_HERE>",
-)
+) as sdk:
 
-res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
-    "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
-    "name": "John Doe",
-    "address": {
-        "street": "123 Main St",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94107",
-    },
-    "age": 30,
-    "gender": "MALE",
-})
-
-if res is not None:
-    # handle response
-    pass
-```
-
-</br>
-
-The same SDK client can also be used to make asychronous requests by importing asyncio.
-```python
-# Asynchronous Example
-import asyncio
-from openapi import SDK
-
-async def main():
-    s = SDK(
-        api_key="<YOUR_API_KEY_HERE>",
-    )
-    res = await s.users.create_async(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
         "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
         "name": "John Doe",
         "address": {
@@ -114,9 +90,43 @@ async def main():
         "age": 30,
         "gender": "MALE",
     })
-    if res is not None:
-        # handle response
-        pass
+
+    assert res is not None
+
+    # Handle response
+    print(res)
+```
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+from openapi import SDK
+
+async def main():
+    async with SDK(
+        api_key="<YOUR_API_KEY_HERE>",
+    ) as sdk:
+
+        res = await sdk.users.create_async(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+            "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
+            "name": "John Doe",
+            "address": {
+                "street": "123 Main St",
+                "city": "San Francisco",
+                "state": "CA",
+                "zip": "94107",
+            },
+            "age": 30,
+            "gender": "MALE",
+        })
+
+        assert res is not None
+
+        # Handle response
+        print(res)
 
 asyncio.run(main())
 ```
@@ -148,58 +158,60 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
 from openapi import SDK
-from sdk.utils import BackoffStrategy, RetryConfig
+from openapi.utils import BackoffStrategy, RetryConfig
 
-s = SDK(
+with SDK(
     api_key="<YOUR_API_KEY_HERE>",
-)
+) as sdk:
 
-res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
-    "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
-    "name": "John Doe",
-    "address": {
-        "street": "123 Main St",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94107",
+    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+        "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
+        "name": "John Doe",
+        "address": {
+            "street": "123 Main St",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip": "94107",
+        },
+        "age": 30,
+        "gender": "MALE",
     },
-    "age": 30,
-    "gender": "MALE",
-},
-    RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
+        RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
 from openapi import SDK
-from sdk.utils import BackoffStrategy, RetryConfig
+from openapi.utils import BackoffStrategy, RetryConfig
 
-s = SDK(
+with SDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     api_key="<YOUR_API_KEY_HERE>",
-)
+) as sdk:
 
-res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
-    "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
-    "name": "John Doe",
-    "address": {
-        "street": "123 Main St",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94107",
-    },
-    "age": 30,
-    "gender": "MALE",
-})
+    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+        "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
+        "name": "John Doe",
+        "address": {
+            "street": "123 Main St",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip": "94107",
+        },
+        "age": 30,
+        "gender": "MALE",
+    })
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 <!-- End Retries [retries] -->
@@ -220,22 +232,60 @@ By default, an API error will raise a models.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_async` method may raise the following exceptions:
 
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| models.SDKError | 4XX, 5XX        | \*/\*           |
+| Error Type      | Status Code | Content Type |
+| --------------- | ----------- | ------------ |
+| models.SDKError | 4XX, 5XX    | \*/\*        |
 
 ### Example
 
 ```python
 from openapi import SDK, models
 
-s = SDK(
+with SDK(
     api_key="<YOUR_API_KEY_HERE>",
-)
+) as sdk:
+    res = None
+    try:
 
-res = None
-try:
-    res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+        res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+            "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
+            "name": "John Doe",
+            "address": {
+                "street": "123 Main St",
+                "city": "San Francisco",
+                "state": "CA",
+                "zip": "94107",
+            },
+            "age": 30,
+            "gender": "MALE",
+        })
+
+        assert res is not None
+
+        # Handle response
+        print(res)
+
+    except models.SDKError as e:
+        # handle exception
+        raise(e)
+```
+<!-- End Error Handling [errors] -->
+
+<!-- Start Server Selection [server] -->
+## Server Selection
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+```python
+from openapi import SDK
+
+with SDK(
+    server_url="http://localhost:35123",
+    api_key="<YOUR_API_KEY_HERE>",
+) as sdk:
+
+    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
         "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
         "name": "John Doe",
         "address": {
@@ -248,84 +298,10 @@ try:
         "gender": "MALE",
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
 
-except models.SDKError as e:
-    # handle exception
-    raise(e)
-```
-<!-- End Error Handling [errors] -->
-
-<!-- Start Server Selection [server] -->
-## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `http://localhost:35123` | None |
-
-#### Example
-
-```python
-from openapi import SDK
-
-s = SDK(
-    server_idx=0,
-    api_key="<YOUR_API_KEY_HERE>",
-)
-
-res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
-    "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
-    "name": "John Doe",
-    "address": {
-        "street": "123 Main St",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94107",
-    },
-    "age": 30,
-    "gender": "MALE",
-})
-
-if res is not None:
-    # handle response
-    pass
-
-```
-
-
-### Override Server URL Per-Client
-
-The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
-```python
-from openapi import SDK
-
-s = SDK(
-    server_url="http://localhost:35123",
-    api_key="<YOUR_API_KEY_HERE>",
-)
-
-res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
-    "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
-    "name": "John Doe",
-    "address": {
-        "street": "123 Main St",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94107",
-    },
-    "age": 30,
-    "gender": "MALE",
-})
-
-if res is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
 
 ```
 <!-- End Server Selection [server] -->
@@ -418,34 +394,35 @@ s = SDK(async_client=CustomClient(httpx.AsyncClient()))
 
 This SDK supports the following security scheme globally:
 
-| Name      | Type      | Scheme    |
-| --------- | --------- | --------- |
-| `api_key` | apiKey    | API key   |
+| Name      | Type   | Scheme  |
+| --------- | ------ | ------- |
+| `api_key` | apiKey | API key |
 
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     api_key="<YOUR_API_KEY_HERE>",
-)
+) as sdk:
 
-res = s.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
-    "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
-    "name": "John Doe",
-    "address": {
-        "street": "123 Main St",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94107",
-    },
-    "age": 30,
-    "gender": "MALE",
-})
+    res = sdk.users.create(id="90d8257b-5a84-4510-97c3-dabf1bfa361b", user={
+        "id": "90d8257b-5a84-4510-97c3-dabf1bfa361b",
+        "name": "John Doe",
+        "address": {
+            "street": "123 Main St",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip": "94107",
+        },
+        "age": 30,
+        "gender": "MALE",
+    })
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 <!-- End Authentication [security] -->
