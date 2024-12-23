@@ -50,8 +50,6 @@ The following are prerequisites for running the demonstration locally:
 ```yaml
 generation:
   # ... other configuration ...
-  mockServer:
-    disabled: false
   tests:
     generateNewTests: true
 ```
