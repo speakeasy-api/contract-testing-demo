@@ -1,11 +1,21 @@
 <div align="center">
-    <picture>
-	<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/5dbef0ff-ee5f-4e8f-8abd-9f57e3310cb9">
-	<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/38058088-ac68-443e-9d63-94200c201759">
-	<img width="400px" src="https://github.com/user-attachments/assets/5dbef0ff-ee5f-4e8f-8abd-9f57e3310cb9#gh-light-mode-only" alt="Speakeasy">
-    </picture>
+ <a href="https://www.speakeasy.com/" target="_blank">
+   <picture>
+       <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/21dd5d3a-aefc-4cd3-abee-5e17ef1d4dad">
+       <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/0a747f98-d228-462d-9964-fd87bf93adc5">
+       <img width="100px" src="https://github.com/user-attachments/assets/21dd5d3a-aefc-4cd3-abee-5e17ef1d4dad#gh-light-mode-only" alt="Speakeasy">
+   </picture>
+ </a>
+  <h1>Speakeasy</h1>
+  <p>Build APIs your users love ❤️ with Speakeasy</p>
+  <div>
+   <a href="https://speakeasy.com/docs/create-client-sdks/" target="_blank"><b>Docs Quickstart</b></a>&nbsp;&nbsp;//&nbsp;&nbsp;<a href="https://join.slack.com/t/speakeasy-dev/shared_invite/zt-1cwb3flxz-lS5SyZxAsF_3NOq5xc8Cjw" target="_blank"><b>Join us on Slack</b></a>
+  </div>
+ <br />
+
 </div>
-<br></br>
+
+<hr />
 
 This repository contains a demonstration for [Speakeasy Contract Testing](https://www.speakeasy.com/product/api-testing) feature set. It contains:
 
