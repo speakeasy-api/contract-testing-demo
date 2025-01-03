@@ -115,13 +115,13 @@ targets:
         successCriteria:
           - condition: $statusCode == 200
           - condition: $response.header.Content-Type == application/json
-          # - condition: $response.body#/address/street == '456 Second St'
-          # - condition: $response.body#/address/city == 'San Diego'
+          - condition: $response.body#/address/street == '456 Second St'
+          - condition: $response.body#/address/city == 'San Diego'
           - condition: $response.body#/address/state == 'CA'
           - condition: $response.body#/address/zip == 92104
           - condition: $response.body#/age == 32
           - condition: $response.body#/gender == 'MALE'
-            # - condition: $response.body#/name == 'Trystan Crooks'
+          - condition: $response.body#/name == 'Trystan Crooks'
         outputs:
           id: $response.body#/id
       - stepId: get
@@ -133,13 +133,13 @@ targets:
         successCriteria:
           - condition: $statusCode == 200
           - condition: $response.header.Content-Type == application/json
-          # - condition: $response.body#/address/street == '456 Second St'
-          # - condition: $response.body#/address/city == 'San Diego'
+          - condition: $response.body#/address/street == '456 Second St'
+          - condition: $response.body#/address/city == 'San Diego'
           - condition: $response.body#/address/state == 'CA'
           - condition: $response.body#/address/zip == 92104
           - condition: $response.body#/age == 32
           - condition: $response.body#/gender == 'MALE'
-            # - condition: $response.body#/name == 'Trystan Crooks'
+          - condition: $response.body#/name == 'Trystan Crooks'
         outputs:
           user: $response.body
           age: $response.body#/age
@@ -160,13 +160,13 @@ targets:
         successCriteria:
           - condition: $statusCode == 200
           - condition: $response.header.Content-Type == application/json
-          # - condition: $response.body#/address/street == '456 Second St'
-          # - condition: $response.body#/address/city == 'San Diego'
+          - condition: $response.body#/address/street == '456 Second St'
+          - condition: $response.body#/address/city == 'San Diego'
           - condition: $response.body#/address/state == 'CA'
           - condition: $response.body#/address/zip == 92103
           - condition: $response.body#/age == 32
           - condition: $response.body#/gender == 'MALE'
-            # - condition: $response.body#/name == 'Trystan Crooks'
+          - condition: $response.body#/name == 'Trystan Crooks'
         outputs:
           address: $response.body#/address
           gender: $response.body#/gender
@@ -183,13 +183,13 @@ targets:
         successCriteria:
           - condition: $statusCode == 200
           - condition: $response.header.Content-Type == application/json
-          # - condition: $response.body#/address/street == '456 Second St'
-          # - condition: $response.body#/address/city == 'San Diego'
+          - condition: $response.body#/address/street == '456 Second St'
+          - condition: $response.body#/address/city == 'San Diego'
           - condition: $response.body#/address/state == 'CA'
           - condition: $response.body#/address/zip == 92103
           - condition: $response.body#/age == 33
           - condition: $response.body#/gender == 'MALE'
-            # - condition: $response.body#/name == 'Trystan Crooks'
+          - condition: $response.body#/name == 'Trystan Crooks'
       - stepId: delete
         operationId: deleteUser
         parameters:
