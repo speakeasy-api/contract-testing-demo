@@ -1,4 +1,4 @@
-speakeasyVersion: 1.456.0
+speakeasyVersion: 1.468.7
 sources:
     openapi:
         sourceNamespace: openapi
@@ -8,8 +8,8 @@ sources:
             - latest
     testgendemo:
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:966ff0db3e93cda0d85ea6931b0376f04bff3e1e7b6366729269684eb02743c9
-        sourceBlobDigest: sha256:9ff57266ac14396c27d77a9dbd4350a5a750f7c98ac5fae1eb8a77d0d64724d4
+        sourceRevisionDigest: sha256:5c6e455597c17dff75b6a5bd563c16d6b977f847151f2e1510dddb57784c0537
+        sourceBlobDigest: sha256:22b7c1c516ca53720bf507982e8bc1ecaf87a9f39049a3add2679c218daed60f
         tags:
             - latest
             - 0.1.0
@@ -17,24 +17,24 @@ targets:
     go:
         source: testgendemo
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:966ff0db3e93cda0d85ea6931b0376f04bff3e1e7b6366729269684eb02743c9
-        sourceBlobDigest: sha256:9ff57266ac14396c27d77a9dbd4350a5a750f7c98ac5fae1eb8a77d0d64724d4
+        sourceRevisionDigest: sha256:5c6e455597c17dff75b6a5bd563c16d6b977f847151f2e1510dddb57784c0537
+        sourceBlobDigest: sha256:22b7c1c516ca53720bf507982e8bc1ecaf87a9f39049a3add2679c218daed60f
         codeSamplesNamespace: testgendemo-go-code-samples
-        codeSamplesRevisionDigest: sha256:2cb90f8dfb0d12b056edf50a1851150d5a3215da8da5dc3cc7f17f9e5d198948
+        codeSamplesRevisionDigest: sha256:8c50e9068d330d5c6ac52a816fe72251045fb80aaae6cd2c31abf2a77bca3d73
     python:
         source: testgendemo
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:dcd375931cd44420a93dc6299ca89f61e29631f4d7ea78b816f1b7ffbf1ea76f
-        sourceBlobDigest: sha256:9ff57266ac14396c27d77a9dbd4350a5a750f7c98ac5fae1eb8a77d0d64724d4
+        sourceRevisionDigest: sha256:a6a8c0c8fe1470ab799a10b9bacc849008cd76d25c59ae24ae067119713c9763
+        sourceBlobDigest: sha256:22b7c1c516ca53720bf507982e8bc1ecaf87a9f39049a3add2679c218daed60f
         codeSamplesNamespace: testgendemo-python-code-samples
-        codeSamplesRevisionDigest: sha256:e210646630d018e91c4d0097f886a9f13ce21b1e3d6d2c66beafae797236e50a
+        codeSamplesRevisionDigest: sha256:1219844a213edd63c1a3ca01d15d5753016abcf0551f3a8b2aa9a3136a181bdb
     typescript:
         source: testgendemo
         sourceNamespace: testgendemo
-        sourceRevisionDigest: sha256:7bf2b128b2d87c93818c6d93916cf891e62ffea02f0b98d59616b94d07c737ee
-        sourceBlobDigest: sha256:9ff57266ac14396c27d77a9dbd4350a5a750f7c98ac5fae1eb8a77d0d64724d4
+        sourceRevisionDigest: sha256:f1cf0e17b2060f27f6ce79c803764074a8759ab6d3286a27dac62cd513b9eefa
+        sourceBlobDigest: sha256:22b7c1c516ca53720bf507982e8bc1ecaf87a9f39049a3add2679c218daed60f
         codeSamplesNamespace: testgendemo-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:1c6aae72996bcb945008388cb6076d90c7e8553ec1e14955daca9517d397e5d8
+        codeSamplesRevisionDigest: sha256:da2cd96fdaa1751d82850ffa0c486f32d165f5d7f88de8a908475ace01c00835
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

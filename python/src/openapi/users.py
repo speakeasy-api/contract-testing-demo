@@ -36,7 +36,7 @@ class Users(BaseSDK):
             request = utils.unmarshal(request, models.User)
         request = cast(models.User, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/anything/user",
             base_url=base_url,
@@ -119,7 +119,7 @@ class Users(BaseSDK):
             request = utils.unmarshal(request, models.User)
         request = cast(models.User, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/anything/user",
             base_url=base_url,
@@ -203,7 +203,7 @@ class Users(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/anything/user/{id}",
             base_url=base_url,
@@ -284,7 +284,7 @@ class Users(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/anything/user/{id}",
             base_url=base_url,
@@ -368,7 +368,7 @@ class Users(BaseSDK):
             user=utils.get_pydantic_model(user, models.User),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="PUT",
             path="/anything/user/{id}",
             base_url=base_url,
@@ -455,7 +455,7 @@ class Users(BaseSDK):
             user=utils.get_pydantic_model(user, models.User),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="PUT",
             path="/anything/user/{id}",
             base_url=base_url,
@@ -539,7 +539,7 @@ class Users(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="DELETE",
             path="/anything/user/{id}",
             base_url=base_url,
@@ -620,7 +620,7 @@ class Users(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="DELETE",
             path="/anything/user/{id}",
             base_url=base_url,

@@ -14,6 +14,7 @@ from .security import Security, SecurityTypedDict
 from .updateuserop import UpdateUserRequest, UpdateUserRequestTypedDict
 from .user import Address, AddressTypedDict, Gender, User, UserTypedDict
 
+
 __all__ = [
     "Address",
     "AddressTypedDict",

@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: 4ff3941c-90a7-40f8-832b-cf515b18949e
 management:
-  docChecksum: 8275ae344b4c393fd4fffe46826d8f74
+  docChecksum: ea2aa10b64feeb4c2630f623f7563a1e
   docVersion: 0.1.0
-  speakeasyVersion: 1.456.0
-  generationVersion: 2.481.0
-  releaseVersion: 0.2.3
-  configChecksum: 5af71f2f7be6472c025dce11220b33a3
+  speakeasyVersion: 1.468.7
+  generationVersion: 2.493.15
+  releaseVersion: 0.2.4
+  configChecksum: 49fa69a5b2c03ca86cec45416596dc17
 features:
   typescript:
     additionalDependencies: 0.1.0
-    core: 3.18.11
+    core: 3.18.14
     defaultEnabledRetries: 0.1.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
-    globalSecurity: 2.82.11
+    globalSecurity: 2.82.12
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
@@ -26,7 +26,6 @@ generatedFiles:
   - .eslintrc.cjs
   - .gitattributes
   - .npmignore
-  - CONTRIBUTING.md
   - FUNCTIONS.md
   - RUNTIMES.md
   - USAGE.md
@@ -119,6 +118,24 @@ examples:
       responses:
         "200":
           application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}
+    createBeer:
+      parameters:
+        path:
+          id: "3a996362-8f81-4d2a-aced-d3d57474e6e9"
+      requestBody:
+        application/json: {"id": "3a996362-8f81-4d2a-aced-d3d57474e6e9", "type": "Beer", "price": 3.99}
+      responses:
+        "200":
+          application/json: {"json": {"id": "3a996362-8f81-4d2a-aced-d3d57474e6e9", "type": "Beer", "price": 3.99}}
+    createCoffee:
+      parameters:
+        path:
+          id: "7afd487f-5fa2-478f-9726-ff80ec8e75f1"
+      requestBody:
+        application/json: {"id": "7afd487f-5fa2-478f-9726-ff80ec8e75f1", "type": "Coffee", "price": 1.99}
+      responses:
+        "200":
+          application/json: {"json": {"id": "7afd487f-5fa2-478f-9726-ff80ec8e75f1", "type": "Coffee", "price": 1.99}}
   getUser:
     speakeasy-default-get-user:
       parameters:

@@ -12,12 +12,10 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
-  mockServer:
-    disabled: true
   tests:
     generateNewTests: false
 go:
-  version: 0.0.4
+  version: 0.0.5
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   clientServerStatusCodesAsErrors: true

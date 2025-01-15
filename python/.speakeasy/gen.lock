@@ -1,16 +1,16 @@
 lockVersion: 2.0.0
 id: b2b2c7b3-00e1-4647-934c-04d2d0f199fd
 management:
-  docChecksum: 8275ae344b4c393fd4fffe46826d8f74
+  docChecksum: ea2aa10b64feeb4c2630f623f7563a1e
   docVersion: 0.1.0
-  speakeasyVersion: 1.456.0
-  generationVersion: 2.481.0
-  releaseVersion: 0.22.2
-  configChecksum: 9215ff98aa1b2d7e2d05a6bf29d93a02
+  speakeasyVersion: 1.468.7
+  generationVersion: 2.493.15
+  releaseVersion: 0.23.0
+  configChecksum: 9088407ca015e1e07fc3500eb7b2f406
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.7.4
+    core: 5.10.1
     defaultEnabledRetries: 0.2.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.2
@@ -20,7 +20,7 @@ features:
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.1.0
     methodArguments: 1.0.2
-    nameOverrides: 3.0.0
+    nameOverrides: 3.0.1
     responseFormat: 1.0.1
     retries: 3.0.2
     sdkHooks: 1.0.0
@@ -28,7 +28,6 @@ generatedFiles:
   - .gitattributes
   - .python-version
   - .vscode/settings.json
-  - CONTRIBUTING.md
   - USAGE.md
   - docs/models/address.md
   - docs/models/createdrinkrequest.md
@@ -110,6 +109,24 @@ examples:
       responses:
         "200":
           application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}
+    createBeer:
+      parameters:
+        path:
+          id: "3a996362-8f81-4d2a-aced-d3d57474e6e9"
+      requestBody:
+        application/json: {"id": "3a996362-8f81-4d2a-aced-d3d57474e6e9", "type": "Beer", "price": 3.99}
+      responses:
+        "200":
+          application/json: {"json": {"id": "3a996362-8f81-4d2a-aced-d3d57474e6e9", "type": "Beer", "price": 3.99}}
+    createCoffee:
+      parameters:
+        path:
+          id: "7afd487f-5fa2-478f-9726-ff80ec8e75f1"
+      requestBody:
+        application/json: {"id": "7afd487f-5fa2-478f-9726-ff80ec8e75f1", "type": "Coffee", "price": 1.99}
+      responses:
+        "200":
+          application/json: {"json": {"id": "7afd487f-5fa2-478f-9726-ff80ec8e75f1", "type": "Coffee", "price": 1.99}}
   getUser:
     speakeasy-default-get-user:
       parameters:

@@ -1,16 +1,16 @@
 lockVersion: 2.0.0
 id: 029062a4-619d-4d39-b94e-cac35d6cf1e7
 management:
-  docChecksum: 8275ae344b4c393fd4fffe46826d8f74
+  docChecksum: ea2aa10b64feeb4c2630f623f7563a1e
   docVersion: 0.1.0
-  speakeasyVersion: 1.456.0
-  generationVersion: 2.481.0
-  releaseVersion: 0.0.4
-  configChecksum: e1d66913d3fda8536e7e0c449d88a27a
+  speakeasyVersion: 1.468.7
+  generationVersion: 2.493.15
+  releaseVersion: 0.0.5
+  configChecksum: abb4ff28ebb8e97cd19e05ef39485ff2
 features:
   go:
     additionalDependencies: 0.1.0
-    core: 3.6.2
+    core: 3.6.5
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
@@ -21,7 +21,7 @@ features:
     intellisenseMarkdownSupport: 0.1.0
     nameOverrides: 2.81.2
     responseFormat: 0.1.2
-    retries: 2.83.1
+    retries: 2.83.2
     sdkHooks: 0.1.0
 generatedFiles:
   - .gitattributes
@@ -34,7 +34,6 @@ generatedFiles:
   - /models/operations/deleteuser.go
   - /models/operations/getuser.go
   - /models/operations/updateuser.go
-  - CONTRIBUTING.md
   - USAGE.md
   - docs/models/components/address.md
   - docs/models/components/drink.md
@@ -102,6 +101,24 @@ examples:
       responses:
         "200":
           application/json: {"json": {"id": "<id>", "type": "Coffee", "price": "1343.65"}}
+    createBeer:
+      parameters:
+        path:
+          id: "3a996362-8f81-4d2a-aced-d3d57474e6e9"
+      requestBody:
+        application/json: {"id": "3a996362-8f81-4d2a-aced-d3d57474e6e9", "type": "Beer", "price": 3.99}
+      responses:
+        "200":
+          application/json: {"json": {"id": "3a996362-8f81-4d2a-aced-d3d57474e6e9", "type": "Beer", "price": 3.99}}
+    createCoffee:
+      parameters:
+        path:
+          id: "7afd487f-5fa2-478f-9726-ff80ec8e75f1"
+      requestBody:
+        application/json: {"id": "7afd487f-5fa2-478f-9726-ff80ec8e75f1", "type": "Coffee", "price": 1.99}
+      responses:
+        "200":
+          application/json: {"json": {"id": "7afd487f-5fa2-478f-9726-ff80ec8e75f1", "type": "Coffee", "price": 1.99}}
   getUser:
     speakeasy-default-get-user:
       parameters:

@@ -39,7 +39,7 @@ class Drinks(BaseSDK):
             drink=utils.get_pydantic_model(drink, models.Drink),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/anything/drink/{id}",
             base_url=base_url,
@@ -127,7 +127,7 @@ class Drinks(BaseSDK):
             drink=utils.get_pydantic_model(drink, models.Drink),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/anything/drink/{id}",
             base_url=base_url,

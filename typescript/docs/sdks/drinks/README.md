@@ -20,11 +20,11 @@ const sdk = new SDK({
 
 async function run() {
   const result = await sdk.drinks.create({
-    id: "<id>",
+    id: "3a996362-8f81-4d2a-aced-d3d57474e6e9",
     drink: {
-      id: "<id>",
-      type: "Coffee",
-      price: 6384.24,
+      id: "3a996362-8f81-4d2a-aced-d3d57474e6e9",
+      type: "Beer",
+      price: 3.99,
     },
   });
 
@@ -51,11 +51,11 @@ const sdk = new SDKCore({
 
 async function run() {
   const res = await drinksCreate(sdk, {
-    id: "<id>",
+    id: "3a996362-8f81-4d2a-aced-d3d57474e6e9",
     drink: {
-      id: "<id>",
-      type: "Coffee",
-      price: 6384.24,
+      id: "3a996362-8f81-4d2a-aced-d3d57474e6e9",
+      type: "Beer",
+      price: 3.99,
     },
   });
 

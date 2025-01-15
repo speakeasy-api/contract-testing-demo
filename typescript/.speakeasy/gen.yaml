@@ -12,12 +12,10 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: false
-  mockServer:
-    disabled: true
   tests:
     generateNewTests: false
 typescript:
-  version: 0.2.3
+  version: 0.2.4
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -26,6 +24,7 @@ typescript:
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
   defaultErrorName: SDKError
+  enableCustomCodeRegions: false
   enableReactQuery: false
   enumFormat: union
   flattenGlobalSecurity: true

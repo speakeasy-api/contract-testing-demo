@@ -12,12 +12,10 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: false
-  mockServer:
-    disabled: true
   tests:
     generateNewTests: false
 python:
-  version: 0.22.2
+  version: 0.23.0
   additionalDependencies:
     dev: {}
     main: {}

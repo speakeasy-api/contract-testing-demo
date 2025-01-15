@@ -28,10 +28,10 @@ func main() {
         openapi.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
-    res, err := s.Drinks.Create(ctx, "<id>", components.Drink{
-        ID: "<id>",
-        Type: components.TypeCoffee,
-        Price: 6384.24,
+    res, err := s.Drinks.Create(ctx, "3a996362-8f81-4d2a-aced-d3d57474e6e9", components.Drink{
+        ID: "3a996362-8f81-4d2a-aced-d3d57474e6e9",
+        Type: components.TypeBeer,
+        Price: 3.99,
     })
     if err != nil {
         log.Fatal(err)

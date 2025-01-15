@@ -1,6 +1,6 @@
 {
   "name": "openapi",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "Speakeasy",
   "main": "./index.js",
   "sideEffects": false,

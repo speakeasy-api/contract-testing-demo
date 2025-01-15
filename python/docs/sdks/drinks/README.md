@@ -18,10 +18,10 @@ with SDK(
     api_key="<YOUR_API_KEY_HERE>",
 ) as sdk:
 
-    res = sdk.drinks.create(id="<id>", drink={
-        "id": "<id>",
-        "type": "Coffee",
-        "price": 6384.24,
+    res = sdk.drinks.create(id="3a996362-8f81-4d2a-aced-d3d57474e6e9", drink={
+        "id": "3a996362-8f81-4d2a-aced-d3d57474e6e9",
+        "type": "Beer",
+        "price": 3.99,
     })
 
     assert res is not None
