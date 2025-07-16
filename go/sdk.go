@@ -19,7 +19,7 @@ var ServerList = []string{
 	"http://localhost:35123",
 }
 
-// HTTPClient provides an interface for suplying the SDK with a custom HTTP client
+// HTTPClient provides an interface for supplying the SDK with a custom HTTP client
 type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
