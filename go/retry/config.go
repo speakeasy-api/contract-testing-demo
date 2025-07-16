@@ -87,7 +87,7 @@ func (e *TemporaryError) Error() string {
 
 // RetryAfter returns the time to wait before retrying the request. The zero
 // value should be interpreted by retry loops to mean they should fallback on
-// their default policy whether expenonential, constant backoff or something
+// their default policy whether exponential, constant backoff or something
 // else. It does not mean that an operation should be retried immediately.
 func (e *TemporaryError) RetryAfter() time.Duration {
 	return e.wait
