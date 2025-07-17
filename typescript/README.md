@@ -257,7 +257,7 @@ In some rare cases, the SDK can fail to get a response from the server or even m
 | RequestTimeoutError                                  | HTTP request timed out due to an AbortSignal signal  |
 | ConnectionError                                      | HTTP client was unable to make a request to a server |
 | InvalidRequestError                                  | Any input used to create a request is invalid        |
-| UnexpectedClientError                                | Unrecognised or unexpected error                     |
+| UnexpectedClientError                                | Unrecognized or unexpected error                     |
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
